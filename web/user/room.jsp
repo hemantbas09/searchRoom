@@ -23,7 +23,7 @@
                     <section class="course">
                         <%@include file="../common/card.jsp" %>
                     </section>
-                    
+                    ROW
 
                 </div>
             </section>
