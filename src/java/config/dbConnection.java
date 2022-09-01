@@ -17,9 +17,9 @@ public class dbConnection {
      public static Connection createConnection()
     {
     	Connection con = null;
-        String URL = "jdbc:mysql://localhost:3306/vsolution? useSSL=false";
-        String username = "hemant61";
-        String password = "hemant61";
+        String URL = "jdbc:mysql://localhost:3306/searchRoom? useSSL=false";
+        String username = "root";
+        String password = "";
  
     try
     {

@@ -13,13 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
  
-import com.model.Login;
-import com.dao.LoginDao;
+//import com.model.Login;
+//import com.dao.LoginDao;
 import javax.servlet.annotation.WebServlet;
 /**
  *
  * @author hemant61
  */
+/*
 public class loginServalet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     public LoginServlet() {
@@ -95,3 +96,4 @@ System.out.println("Inside servlet");
     request.getRequestDispatcher("/Login.jsp").forward(request, response);
     }
 }
+*/

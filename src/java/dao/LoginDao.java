@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
 package dao;
 
 
@@ -10,12 +11,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
  
-import com.model.Login;
-import com.config.DBConnection;
+import model.Login;
+import config.dbConnection;
 /**
  *
  * @author hemant61
  */
+
 public class LoginDao {
      
 public String authenticateUser(Login login)
@@ -33,7 +35,7 @@ public String authenticateUser(Login login)
  
     try
     {
-        con = DBConnection.createConnection();
+        con = dbConnection.createConnection();
         statement = con.createStatement();
         resultSet = statement.executeQuery("select username,password,role from users");
  
