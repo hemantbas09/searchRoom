@@ -55,7 +55,7 @@
                     </div>
                     <div class="signup-form">
                         <div class="title">Signup</div>
-                        <form action="#">
+                        <form action="<%= request.getContextPath() %>/register" method="post">
                             <div class="input-boxes">
                                 <div class="input-box">
                                     <i class="fas fa-user"></i>

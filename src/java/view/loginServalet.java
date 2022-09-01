@@ -5,6 +5,7 @@
 package view;
 
 
+import dao.LoginDao;
 import java.io.IOException;
  
 import javax.servlet.ServletException;
@@ -12,10 +13,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
  
 //import com.model.Login;
 //import com.dao.LoginDao;
 import javax.servlet.annotation.WebServlet;
+import model.Login;
 /**
  *
  * @author hemant61
@@ -23,7 +26,7 @@ import javax.servlet.annotation.WebServlet;
 /*
 public class loginServalet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    public LoginServlet() {
+    public loginServalet {
     }
     @Override
      
@@ -42,30 +45,6 @@ System.out.println("Inside servlet");
     try
     {
         String userValidate = loginDao.authenticateUser(login);
- 
-        if(userValidate.equals("Admin_Role"))
-        {
-            System.out.println("Admin's Home");
- 
-            HttpSession session = request.getSession(); //Creating a session
-            session.setAttribute("Admin", userName); //setting session attribute
-            request.setAttribute("userName", userName);
- 
-            request.getRequestDispatcher("/JSP/Admin.jsp").forward(request, response);
-        }
-        else if(userValidate.equals("Editor_Role"))
-        {
-            System.out.println("Editor's Home");
- 
-            HttpSession session = request.getSession();
-            session.setAttribute("Editor", userName);
-            request.setAttribute("userName", userName);
- 
-            request.getRequestDispatcher("/JSP/Editor.jsp").forward(request, response);
-        }
-        else if(userValidate.equals("User_Role"))
-        {
-            System.out.println("User's Home"); 
             HttpSession session = request.getSession();
             session.setMaxInactiveInterval(10*60);
             session.setAttribute("User", userName);

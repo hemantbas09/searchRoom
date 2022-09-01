@@ -20,10 +20,10 @@ import config.dbConnection;
 
 public class LoginDao {
      
-public String authenticateUser(Login login)
+public String authenticateUser(Login Login)
 {
-    String userName = login.getUserName();
-    String password = login.getPassword();
+    String userName = Login.getUserName();
+    String password = Login.getPassword();
  
     Connection con = null;
     Statement statement = null;
@@ -31,26 +31,22 @@ public String authenticateUser(Login login)
  
     String userNameDB = "";
     String passwordDB = "";
-    String roleDB = "";
+  
  
     try
     {
         con = dbConnection.createConnection();
         statement = con.createStatement();
-        resultSet = statement.executeQuery("select username,password,role from users");
+        resultSet = statement.executeQuery("select username,password,role from authentication");
  
         while(resultSet.next())
         {
             userNameDB = resultSet.getString("username");
             passwordDB = resultSet.getString("password");
-            roleDB = resultSet.getString("role");
+
  
-            if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("Admin"))
-            return "Admin_Role";
-            else if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("Editor"))
-            return "Editor_Role";
-            else if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("User"))
-            return "User_Role";
+            if(userName.equals(userNameDB) && password.equals(passwordDB))
+            return "viewProfile";
         }
     }
     catch(SQLException e)
