@@ -4,43 +4,46 @@
  */
 package config;
 
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
 /**
  *
  * @author hemant61
  */
 public class dbConnection {
-     public static Connection createConnection()
-    {
-    	Connection con = null;
-        String URL = "jdbc:mysql://localhost:3306/searchRoom? useSSL=false";
-        String username = "root";
-        String password = "";
- 
-    try
-    {
-    	try {
-    	    Class.forName("com.mysql.cj.jdbc.Driver");
-    	} catch (ClassNotFoundException e1) {
-    	    e1.printStackTrace();
-    	}
-        
-        con = DriverManager.getConnection(URL, username, password);
+
+    public static Connection createConnection() {
+        Connection con = null;
+
+        try {
+
+            if (con == null) {
+                //driver class load
+                Class.forName("com.mysql.jdbc.Driver");
+
+                //create a connection..
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/searchRoom", "root", "");
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return con;
     }
-    catch (SQLException e)
-    {
-    	 System.out.println("An error occurred. Maybe user/password is invalid");
-         e.printStackTrace();
-    }
-    
-	return con;
-    }
-    
 }
+/*
+
+<%@page import= "java.sql.*" %>
+<%@page import="config.dbConnection"%>
+<%
+
+            Connection con = dbConnection.createConnection();
+   %>
+        <h1><%= con %></h1> 
 
 
-
+*/

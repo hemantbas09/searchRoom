@@ -1,5 +1,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,7 +11,7 @@
 
     </head>
     <body>
-
+       
         <%@include file="common/header.jsp" %>
         <section class="home">
 
@@ -43,7 +44,7 @@
                 <img src="Static/Image/homebanner.jpg" alt=""/>
             </div>
         </section> 
-            
+
         <%@include file="common/footer.jsp" %>
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>

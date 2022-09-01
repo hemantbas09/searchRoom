@@ -16,6 +16,20 @@ public class registration {
     private String password;
     private String confirmPassword;
 
+    public registration(String role, String name, String username, String email, String password, String confirmPassword) {
+        this.role = role;
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.confirmPassword = confirmPassword;
+    }
+
+    public registration() {
+    }
+      
+    
+    
     public String getRole() {
         return role;
     }

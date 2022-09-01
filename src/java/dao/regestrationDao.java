@@ -4,64 +4,54 @@
  */
 package dao;
 
-import config.dbConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import model.registration;
+
 /**
  *
  * @author hemant61
  */
 public class regestrationDao {
 
-  
-    
-     public int registerUser(registration user) throws ClassNotFoundException {
-        String INSERT_USERS_SQL = "INSERT INTO authentication" +
-            "  (role, name, username,email, password, confirmPassword) VALUES " +
-            " (?, ?, ?, ?, ?,?,?);";
+    private Connection con;
 
-        int result = 0;
+    public regestrationDao(Connection con) {
+        this.con = con;
+    }
+    // method to inser user to databse:
 
-       
+    public boolean saveUser(registration user) {
+        boolean f = false;
 
-        try( Connection con = dbConnection.createConnection();
-        
-            // Step 2:Create a statement using connection object
-            PreparedStatement preparedStatement = con.prepareStatement(INSERT_USERS_SQL)) {
-            preparedStatement.setString(1, user.getRole());
-            preparedStatement.setString(2,  user.getName());
-            preparedStatement.setString(3,  user.getUsername());
-            preparedStatement.setString(4,  user.getEmail());
-            preparedStatement.setString(5,  user.getPassword());
-            preparedStatement.setString(6,  user.getConfirmPassword());
+        try {
 
-            System.out.println(preparedStatement);
-            // Step 3: Execute the query or update query
-            result = preparedStatement.executeUpdate();
+            // User send to database:
+            String query = "insert into authentication(role, name, username,email, password, confirmPassword) values (?, ?, ?, ?, ?,?)";
+            PreparedStatement pst = this.con.prepareStatement(query);
+            pst.setString(1, user.getRole());
+            pst.setString(2, user.getName());
+            pst.setString(3, user.getUsername());
+            pst.setString(4, user.getEmail());
+            pst.setString(5, user.getPassword());
+            pst.setString(6, user.getConfirmPassword());
 
-        } catch (SQLException e) {
-            // process sql exception
-            printSQLException(e);
+            pst.executeUpdate();
+            f = true;
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
         }
-        return result;
+        return f;
+
     }
 
-    private void printSQLException(SQLException ex) {
-        for (Throwable e: ex) {
-            if (e instanceof SQLException) {
-                e.printStackTrace(System.err);
-                System.err.println("SQLState: " + ((SQLException) e).getSQLState());
-                System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
-                System.err.println("Message: " + e.getMessage());
-                Throwable t = ex.getCause();
-                while (t != null) {
-                    System.out.println("Cause: " + t);
-                    t = t.getCause();
-                }
-            }
-        }
+    public boolean saveUser() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
+   
+   
+
 }

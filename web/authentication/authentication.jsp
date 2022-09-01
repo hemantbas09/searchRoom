@@ -54,32 +54,33 @@
                         </form>
                     </div>
                     <div class="signup-form">
+
                         <div class="title">Signup</div>
-                        <form action="<%= request.getContextPath() %>/register" method="post">
+                        <form action="<%= request.getContextPath() %>/registerServalet" method="post">
                             <div class="input-boxes">
                                 <div class="input-box">
                                     <i class="fas fa-user"></i>
-                                    <input type="text" placeholder="Enter your username" required>
+                                    <input name="username" type="text" placeholder="Enter your username" required>
                                 </div>
                                 <div class="input-box">
                                     <i class="fas fa-user"></i>
-                                    <input type="text" placeholder="Enter your name" required>
+                                    <input name="name" type="text" placeholder="Enter your name" required>
                                 </div>
                                 <div class="input-box">
                                     <i class="fas fa-envelope"></i>
-                                    <input type="text" placeholder="Enter your email" required>
+                                    <input name="email" type="text" placeholder="Enter your email" required>
                                 </div>
                                 <div class="input-box">
                                     <i class="fas fa-lock"></i>
-                                    <input type="password" placeholder="Enter your password" required>
+                                    <input name="password"  type="password" placeholder="Enter your password" required>
                                 </div>
                                 <div class="input-box">
                                     <i class="fas fa-lock"></i>
-                                    <input type="password" placeholder="Again Enter Your Password" required>
+                                    <input name="confirmPassword" type="password" placeholder="Again Enter Your Password" required>
                                 </div>
                                 <div class="input-box">
                                     <i class="fas fa-lock"></i>
-                                    <input type="password" placeholder="Select your Role:" required>
+                                    <input name="role" class="" type="text" placeholder="Select your Role:" required>
                                 </div>
                                 <div class="button input-box">
                                     <input type="submit" value="Sumbit">
