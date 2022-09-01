@@ -56,7 +56,7 @@
                     <div class="signup-form">
 
                         <div class="title">Signup</div>
-                        <form action="<%= request.getContextPath() %>/registerServalet" method="post">
+                        <form id="signup" action="<%= request.getContextPath()%>/registerServalet" method="post">
                             <div class="input-boxes">
                                 <div class="input-box">
                                     <i class="fas fa-user"></i>
@@ -83,7 +83,7 @@
                                     <input name="role" class="" type="text" placeholder="Select your Role:" required>
                                 </div>
                                 <div class="button input-box">
-                                    <input type="submit" value="Sumbit">
+                                    <input id="submit-btn" type="submit" value="Sumbit">
                                 </div>
                                 <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
                             </div>
@@ -92,5 +92,58 @@
                 </div>
             </div>
         </div>
+ <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                console.log("loaded........");
+
+                $('#signup').on('submit', function (event) {
+                    event.preventDefault();
+                    let form = new FormData(this);
+                    $("#sumbimt-btn").hide();
+                    $("#loader").show();
+//send register servlet:
+                    $.ajax({
+                        url: "<%= request.getContextPath()%>/registerServalet",
+                        type: 'post',
+                        data: form,
+                        success: function (data, textStatus, jqXHR) {
+                            console.log(data);
+                            $("#sumbimt-btn").show();
+                            $("#loader").hide();
+                            if (data.trim() === 'done')
+                            {
+                                swal("Successfully Signup redisrec to the home page")
+                                        .then((value) => {
+                                            window.location = "${pageContext.request.contextPath}/index.jsp";
+                                        });
+                            
+                        }else{
+                            swal(data);
+                        }
+                    },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                           console.log(jqXHR);
+                             $("#sumbimt-btn").show();
+                            $("#loader").hide();
+                            swal("something went wrong..try again");
+                           
+                            
+                        },
+                        processData: false,
+                        contentType: false
+                    });
+                });
+            });
+
+
+
+        </script>
+
+
     </body>
 </html>

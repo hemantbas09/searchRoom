@@ -19,7 +19,7 @@ public class regestrationDao {
     public regestrationDao(Connection con) {
         this.con = con;
     }
-    // method to inser user to databse:
+    // method to insert user to databse:
 
     public boolean saveUser(registration user) {
         boolean f = false;
@@ -47,11 +47,7 @@ public class regestrationDao {
 
     }
 
-    public boolean saveUser() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
    
-   
-
+ 
 }

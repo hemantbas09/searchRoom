@@ -9,6 +9,7 @@ import dao.regestrationDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +19,7 @@ import model.registration;
  *
  * @author hemant61
  */
-
+@MultipartConfig
 public class registerServalet extends HttpServlet {
 
     /**
@@ -35,28 +36,22 @@ public class registerServalet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet registerServalet</title>");
-            out.println("</head>");
-            out.println("<body>");
-//            featch all form data
+            
            
             
                
             String role = request.getParameter("role");
-            out.println(role);
+           
             String name = request.getParameter("name");
-             out.println(name);
+           
             String username = request.getParameter("username");
-             out.println(username);
+            
             String email = request.getParameter("email");
-             out.println(email);
+           
             String password = request.getParameter("password");
-             out.println(password);
+            
             String confirmPassword = request.getParameter("confirmPassword");
-             out.println(confirmPassword);
+            
             
             // create user object and set all data to thath object:
             
@@ -65,23 +60,24 @@ public class registerServalet extends HttpServlet {
             //create user dao oject:
             
             regestrationDao dao= new regestrationDao(dbConnection.createConnection());
-            if(dao.saveUser()){
-                out.println("done");
+            
+           /* if(password.equals(confirmPassword)){
+                dao.saveUser(user);
             }
             else{
-                out.println("error");
-                
+                out.println("Same Password rakh chutiya");
             }
-           
+            */
+            if(dao.saveUser(user)){
+                out.print("done");
+            }
+            else{
+                out.print("error");
+            }
             
-           
             
             
-            
-           
-            out.println("<h1>Servlet registerServalet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+          
         }
     }
 
