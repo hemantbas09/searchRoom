@@ -17,14 +17,15 @@
             <input type="checkbox" id="flip">
             <div class="cover">
                 <div class="front">
-                    <img src="Static/image/a.jpg" alt="">
+                   
+                    <img src="../Static/Image/homebanner.jpg" alt="">
                     <div class="text">
                         <span class="text-1">Every new friend is a <br> new adventure</span>
                         <span class="text-2">Let's get connected</span>
                     </div>
                 </div>
                 <div class="back">
-                    <img class="backImg" src="Static/image/b.jpg" alt="">
+                    <img class="backImg" src="../Static/Image/homebanner.jpg" alt="">
                     <div class="text">
                         <span class="text-1">Complete miles of journey <br> with one step</span>
                         <span class="text-2">Let's get started</span>
@@ -44,10 +45,6 @@
                                 <div class="input-box">
                                     <i class="fas fa-lock"></i>
                                     <input name="loginpassword" type="password" placeholder="Enter your password" required>
-                                </div>
-                                <div class="input-box">
-                                    <i class="fas fa-envelope"></i>
-                                    <input name="loginrole" type="text" placeholder="Enter your email" required>
                                 </div>
                                 <div class="text"><a href="#">Forgot password?</a></div>
                                 <div class="button input-box">

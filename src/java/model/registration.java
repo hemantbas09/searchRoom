@@ -26,6 +26,8 @@ public class registration {
     }
 
    
+
+   
   
     
     
@@ -77,9 +79,7 @@ public class registration {
         this.confirmPassword = confirmPassword;
     }
 
-    public void setconfirmPassword(String confirmPassword) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
     
     
     

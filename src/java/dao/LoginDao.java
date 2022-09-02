@@ -16,6 +16,7 @@ import java.sql.Statement;
  
 import model.Login;
 import config.dbConnection;
+import org.apache.catalina.User;
  
 public class LoginDao {
  
@@ -37,6 +38,7 @@ public String authenticateUser(Login login)
         con = dbConnection.createConnection();
         statement = con.createStatement();
         resultSet = statement.executeQuery("select username,role,password from authentication");
+        System.out.println(resultSet);
  
         while(resultSet.next())
         {
@@ -44,10 +46,10 @@ public String authenticateUser(Login login)
             passwordDB = resultSet.getString("password");
             roleDB = resultSet.getString("role");
  
-            if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("Tenant"))
-            return "Tenent";
-            else if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("Owner"))
-            return "Owner";
+            if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("tenant"))
+            return "tenant";
+            else if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("owner"))
+            return "owner";
         }
     }
     catch(SQLException e)

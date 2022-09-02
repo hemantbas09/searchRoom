@@ -36,31 +36,25 @@ public class registerServalet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
-           
-            
-               
+
             String role = request.getParameter("role");
-           
+            out.print(role);
             String name = request.getParameter("name");
-           
+            out.print(name);
             String username = request.getParameter("username");
-            
+
             String email = request.getParameter("email");
-           
+
             String password = request.getParameter("password");
-            
+
             String confirmPassword = request.getParameter("confirmPassword");
-            
-            
+
             // create user object and set all data to thath object:
-            
-            registration user =new registration(role,name,username,email,password,confirmPassword);
-            
+            registration user = new registration(role, name, username, email, password, confirmPassword);
+
             //create user dao oject:
-            
-            regestrationDao dao= new regestrationDao(dbConnection.createConnection());
-            
+            regestrationDao dao = new regestrationDao(dbConnection.createConnection());
+
             if(password.equals(confirmPassword)){
                 dao.saveUser(user);
             }
@@ -68,13 +62,25 @@ public class registerServalet extends HttpServlet {
                 out.println("Same Password rakh chutiya");
             }
             
-           
-            
-            
-          
+
         }
     }
 
-    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
 
 }

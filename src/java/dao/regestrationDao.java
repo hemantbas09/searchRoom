@@ -6,8 +6,6 @@ package dao;
 
 import java.sql.*;
 import model.registration;
-import org.apache.catalina.User;
-import config.dbConnection;
 
 /**
  *
@@ -15,7 +13,7 @@ import config.dbConnection;
  */
 public class regestrationDao {
 
-    private Connection con;
+    private final Connection con;
 
     public regestrationDao(Connection con) {
         this.con = con;
@@ -48,42 +46,4 @@ public class regestrationDao {
 
     }
 
-    // get User by username and Password:
-    public String Login(registration login) {
-
-        String query = "select * from user where username=? and password=? ";
-        String userName = login.getUsername();
-        String password = login.getPassword();
-
-        Connection con = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
-
-        String userNameDB = "";
-        String passwordDB = "";
-        String roleDB = "";
-
-        try {
-            con = dbConnection.createConnection();
-            statement = con.createStatement();
-            resultSet = statement.executeQuery("select username,password,role from users");
-
-            while (resultSet.next()) {
-                userNameDB = resultSet.getString("username");
-                passwordDB = resultSet.getString("password");
-                roleDB = resultSet.getString("role");
-
-                if (userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("Tenant")) {
-                    return "Tenet";
-                } else if (userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("Owner")) {
-                    return "Owner";
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return "Invalid user cred";
-
-    }
 }
-

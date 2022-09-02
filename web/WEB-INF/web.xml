@@ -12,6 +12,10 @@
         <servlet-name>LoginServalet</servlet-name>
         <servlet-class>view.LoginServalet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>logoutServalet</servlet-name>
+        <servlet-class>view.logoutServalet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerServalet</servlet-name>
         <url-pattern>/registerServalet</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>LoginServalet</servlet-name>
         <url-pattern>/LoginServalet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>logoutServalet</servlet-name>
+        <url-pattern>/logoutServalet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
