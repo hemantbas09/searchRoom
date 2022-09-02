@@ -25,9 +25,8 @@ public class registration {
         this.confirmPassword = confirmPassword;
     }
 
-    public registration() {
-    }
-      
+   
+  
     
     
     public String getRole() {

@@ -4,9 +4,25 @@
         <servlet-name>registerServalet</servlet-name>
         <servlet-class>view.registerServalet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>loginServalet</servlet-name>
+        <servlet-class>view.loginServalet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServalet</servlet-name>
+        <servlet-class>view.LoginServalet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerServalet</servlet-name>
         <url-pattern>/registerServalet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loginServalet</servlet-name>
+        <url-pattern>/loginServalet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServalet</servlet-name>
+        <url-pattern>/LoginServalet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
