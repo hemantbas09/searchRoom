@@ -8,188 +8,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-  
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>About Us</title>
-        
-        <link href="../css/cardStyle.css" rel="stylesheet" type="text/css"/>
+
+        <%@include file="../common/cdn.jsp" %>
+        <link href="../Static/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <!-- 
-        - #ABOUT
-        -->
 
-        <section class="about" id="about">
-            <div class="container">
+        <%@include file="../common/header.jsp" %>
 
-                <figure class="about-banner">
-                    <img src="./assets/images/about-banner-1.png" alt="House interior">
+        <section id="about" class="section-padding about-section">
+            <div  class="container">
+                <div  class="row">
+                    <div style="margin: 2rem;" class="col-sm-6">
+                        <div class="section_title">
+                            <h2><strong>About Us</strong></h2>
+                        </div>
+                        <div >
 
-                    <img src="./assets/images/about-banner-2.jpg" alt="House interior" class="abs-img">
-                </figure>
-
-                <div class="about-content">
-
-                    <p class="section-subtitle">About Us</p>
-
-                    <h2 class="h2 section-title">The Leading Real Estate Rental Marketplace.</h2>
-
-                    <p class="about-text">
-                        Over 39,000 people work for us in more than 70 countries all over the This breadth of global coverage,
-                        combined with
-                        specialist services
-                    </p>
-
-                    <ul class="about-list">
-
-                        <li class="about-item">
-                            <div class="about-item-icon">
-
-                            </div>
-
-                            <p class="about-item-text">Smart Home Design</p>
-                        </li>
-
-                        <li class="about-item">
-                            <div class="about-item-icon">
-
-                            </div>
-
-                            <p class="about-item-text">Beautiful Scene Around</p>
-                        </li>
-
-                        <li class="about-item">
-                            <div class="about-item-icon">
-
-                            </div>
-
-                            <p class="about-item-text">Exceptional Lifestyle</p>
-                        </li>
-
-                        <li class="about-item">
-                            <div class="about-item-icon">
-
-                            </div>
-
-                            <p class="about-item-text">Complete 24/7 Security</p>
-                        </li>
-
-                    </ul>
-
-                    <p class="callout">
-                        "Enimad minim veniam quis nostrud exercitation
-                        llamco laboris. Lorem ipsum dolor sit amet"
-                    </p>
-
-                    <a href="#service" class="btn">Our Services</a>
-
+                            <p style="margin-top: 4rem; font-size: 2.5rem;">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-1" >
+                        <img style="width: 64rem; height:64rem" src="../Static/Image/about.svg" alt=""/>
+                    </div>
                 </div>
-
             </div>
+
         </section>
 
+        <%@include file="../common/footer.jsp" %>
 
-
-
-
-
-        <!-- 
-       - #PROPERTY
-        -->
-
-        <section class="property" id="property">
-            <div class="container">
-
-               
-
-                <h2 class="h2 section-title">Featured Listings</h2>
-
-                <ul class="property-list has-scrollbar">
-
-
-
-
-                    <li>
-                        <div class="property-card">
-                            <figure class="card-banner">
-                                <a href="#">
-                                    <img src="" alt="Luxury villa in Rego Park" class="w-100">
-                                </a>
-                                <div class="card-badge green">Property Type</div>
-
-                                <div class="banner-actions">
-
-                                    <button class="banner-actions-btn">
-                                        <ion-icon name="location"></ion-icon>
-
-                                        <address>Property Address</address>
-                                    </button>
-                                </div>
-                            </figure>
-
-                            <div class="card-content">
-
-                                <div class="card-price">
-                                    <strong>Price of the housr</strong>/Month
-                                </div>
-
-                                <h3 class="h3 card-title">
-                                    <a href="#">Title of the Post</a>
-                                </h3>
-
-                                <p class="card-text">
-                                    This is the Description of the House.This is house is very very silent and bibash fata gharbeti
-                                </p>
-
-                                <ul class="card-list">
-
-                                    <li class="card-item">
-                                        <strong>3</strong>
-
-                                    <ion-icon name="bed-outline"></ion-icon>
-
-                                    <span>Bedrooms</span>
-                                    </li>
-
-                                    <li class="card-item">
-                                        <strong>2</strong>
-
-                                    <ion-icon name="man-outline"></ion-icon>
-
-                                    <span>Bathrooms</span>
-                                    </li>
-
-                                    <li class="card-item">
-                                        <strong>3450</strong>
-
-                                    <ion-icon name="square-outline"></ion-icon>
-
-                                    <span>Square Ft</span>
-                                    </li>
-
-                                </ul>
-
-                            </div>
-
-                            <div class="card-footer">
-
-                               
-
-
-<a style="margin-left:30px;" href="#service" class="btn ">Message</a>
-
-<a style="margin-left:30%;" href="#service" class="btn">Propert Details:</a>
-
-                               
-
-                            </div>
-                    </li>
-
-                </ul>
-
-            </div>
-        </section>
-        
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     </body>

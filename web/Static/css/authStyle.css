@@ -1,20 +1,12 @@
 /* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins" , sans-serif;
 
+:root{
+    --violet:#6c5ce7;
+    --pink:#FC427B;
+    --gradient:linear-gradient(90deg, var(--violet), var(--pink));
 }
-body{
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #7d2ae8;
-  padding: 30px;
-}
+
 .container{
   position: relative;
   max-width: 850px;
@@ -169,19 +161,20 @@ body{
   text-decoration: underline;
 }
 .forms .form-content .button{
-  color: #fff;
+    ;
   margin-top: 40px;
 }
 .forms .form-content .button input{
-  color: #fff;
-  background: #7d2ae8;
+  background:#333;
+    color:#fff;
+    
   border-radius: 6px;
   padding: 0;
   cursor: pointer;
   transition: all 0.4s ease;
 }
 .forms .form-content .button input:hover{
-  background: #5b13b9;
+  background:var(--gradient);
 }
 .forms .form-content label{
   color: #5b13b9;

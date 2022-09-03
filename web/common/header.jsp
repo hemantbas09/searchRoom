@@ -13,9 +13,7 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
 
-                <li class="nav-item nav1 nav2">
-                    <a class="nav-link " href="${pageContext.request.contextPath}/user/search.jsp">Search</a>
-                </li>
+                
 
                 <li class="nav-item nav1 nav2" >
                     <a class="nav-link " href="${pageContext.request.contextPath}/index.jsp">Home</a>
@@ -44,23 +42,14 @@
                 <li class="nav-item nav1 nav2">
                     <a class="nav-link " href="${pageContext.request.contextPath}/user/aboutus.jsp">About Us</a>
                 </li>
-
-                <li class="nav-item dropdown nav1 nav2">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Admin
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/admin/viewProfile.jsp">Profile</a></li>
-                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/admin/postproperty.jsp">Post Property</a></li>
-                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/admin/MyProperties.jsp">My Property</a></li>
-                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/index.jsp">Logout</a></li>
-                    </ul>
-                </li>
-
             </ul>
-
-            <a class="nav-link nav-item nav1 " href="${pageContext.request.contextPath}/authentication/authentication.jsp">SignUp</a>
+            
+                    <a style="margin-right:7rem; " class="nav-link nav-item nav1 " href="${pageContext.request.contextPath}/user/search.jsp"><i class="fa-solid fa-magnifying-glass"></i></a>
+                
+            <a style="color: #ff9966;  /* fallback for old browsers */
+color: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  /* Chrome 10-25, Safari 5.1-6 */
+color: linear-gradient(to right, #ff5e62, #ff9966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+" class="nav-link nav-item nav1 " href="${pageContext.request.contextPath}/authentication/authentication.jsp"><i class="fa-solid fa-user-plus"></i></a>
            
         </div>
 

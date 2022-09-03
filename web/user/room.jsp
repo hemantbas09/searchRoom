@@ -15,20 +15,26 @@
     </head>
 
     <body>
-        <%@include file="../common/header.jsp" %>
-        <div class="container-fluid">
-            <section class="property-section">
-                <h1 style="text-align: center">Room</h1>
-                <div class="row">
-                    <section class="course">
-                        <%@include file="../common/card.jsp" %>
-                    </section>
-                    ROW
+        
+                <%@include file="../common/header.jsp" %>
 
-                </div>
-            </section>
-        </div>
+
+        <h3 class="indexProperty" ><strong>Room</strong></h3>
+        <section class="course">
+            <%@include file="../common/card.jsp" %> 
+           
+            <%@include file="../common/card.jsp" %> 
+            <%@include file="../common/card.jsp" %> 
+            <%@include file="../common/card.jsp" %> 
+            <%@include file="../common/card.jsp" %> 
+            <%@include file="../common/card.jsp" %> 
+
+        </section>
+
+ 
+
         <%@include file="../common/footer.jsp" %>
+        
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     </body>

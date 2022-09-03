@@ -1,3 +1,9 @@
+<%-- 
+    Document   : allProperty
+    Created on : Sep 3, 2022, 9:20:48 AM
+    Author     : hemant61
+--%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -5,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Home</title>
+        <title>All Property</title>
 
         <%@include file="common/cdn.jsp" %>
 
@@ -13,19 +19,7 @@
     <body>
        
         <%@include file="common/header.jsp" %>
-        <section class="home">
-            
-            <div class="content">
-                <h3>Find Perfect Home to live with your family</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia repellat aperiam libero, beatae debitis iusto quia sit aliquid placeat facilis?</p>
-                <a href="allProperty.jsp" class="btn">Find Property</a>
-            </div>
 
-            <div class="image">
-                <img src="${pageContext.request.contextPath}/Static/Image/home.svg" alt="">
-            </div>
-
-        </section>
 
         <h3 class="indexProperty" ><strong>All Property</strong></h3>
         <section class="course">
@@ -38,12 +32,7 @@
 
         </section>
 
-
-        <section class="footer">
-            <div class="img1">
-                <img src="Static/Image/homebanner.jpg" alt=""/>
-            </div>
-        </section> 
+ 
 
         <%@include file="common/footer.jsp" %>
 

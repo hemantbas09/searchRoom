@@ -156,8 +156,9 @@ header .navbar a{
 }
 
 .course .box img{
-    height:20rem;
+    height:40rem;
     width:100%;
+    object-fit: cover;
 }
 
 .course .box .amount{
@@ -189,8 +190,8 @@ header .navbar a{
     padding:.5rem 0;
 }
 .cardbtn{
-    margin-right: 15rem;
-    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
 }
 .course .icons{
     display: flex;
@@ -325,6 +326,8 @@ h2{
 
 
 }
+
+/*------------------Authentication:*/
 
 
 
