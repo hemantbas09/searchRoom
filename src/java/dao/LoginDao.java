@@ -8,54 +8,48 @@ package com.dao;
  *
  * @author ram
  */
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
- 
+
 import model.Login;
 import config.dbConnection;
+import java.sql.PreparedStatement;
 import org.apache.catalina.User;
- 
+
 public class LoginDao {
- 
-public String authenticateUser(Login login)
-{
-    String userName = login.getUserName();
-    String password = login.getPassword();
- 
-    Connection con = null;
-    Statement statement = null;
-    ResultSet resultSet = null;
- 
-    String userNameDB = "";
-    String passwordDB = "";
-    String roleDB = "";
- 
-    try
-    {
-        con = dbConnection.createConnection();
-        statement = con.createStatement();
-        resultSet = statement.executeQuery("select username,role,password from authentication");
-        System.out.println(resultSet);
- 
-        while(resultSet.next())
-        {
-            userNameDB = resultSet.getString("username");
-            passwordDB = resultSet.getString("password");
-            roleDB = resultSet.getString("role");
- 
-            if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("tenant"))
-            return "tenant";
-            else if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("owner"))
-            return "owner";
+
+    public String authenticateUser(Login login) {
+        String userName = login.getUserName();
+        String password = login.getPassword();
+
+       
+        try {
+            Connection con = dbConnection.createConnection();
+            Statement statement = con.createStatement();
+            ResultSet resultSet = statement.executeQuery("select username,role,password from authentication");
+            System.out.println(resultSet);
+
+            while (resultSet.next()) {
+                String userNameDB = resultSet.getString("username");
+                String passwordDB = resultSet.getString("password");
+                String roleDB = resultSet.getString("role");
+
+                if (userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("Tenant")) {
+                    return "Tenant";
+                } else if (userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("Owner")) {
+                    return "Owner";
+                }
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        return "No Found";
+
     }
-    catch(SQLException e)
-    {
-        e.printStackTrace();
-    }
-    return "Invalid user credentials";
-}
+
+   
+    
 }

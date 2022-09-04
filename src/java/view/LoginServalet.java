@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import model.Login;
 
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 
 public class LoginServalet extends HttpServlet {
 
@@ -28,30 +29,49 @@ public class LoginServalet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userName = request.getParameter("loginusername");
         String password = request.getParameter("loginpassword");
-        System.out.println("Inside servlet");
+        String checkBox = request.getParameter("checkBox");
+        System.out.println(checkBox);
         Login login = new Login();
-
         login.setUserName(userName);
         login.setPassword(password);
+        System.out.println("username" + userName);
+        System.out.println("password " + password);
 
         LoginDao loginDao = new LoginDao();
         System.out.println("Hemant Basnet");
 
+        if (checkBox != null) {
+
+            System.out.println("remember : " + checkBox);
+            Cookie cUserName = new Cookie("cookuser", userName.trim());
+            Cookie cPassword = new Cookie("cookpass", password.trim());
+            Cookie cRemember = new Cookie("cookrem", checkBox.trim());
+            cUserName.setMaxAge(60 * 60 * 24 * 15);// 15 days
+            cPassword.setMaxAge(60 * 60 * 24 * 15);
+            cRemember.setMaxAge(60 * 60 * 24 * 15);
+            response.addCookie(cUserName);
+            response.addCookie(cPassword);
+            response.addCookie(cRemember);
+        }
         try {
             String userValidate = loginDao.authenticateUser(login);
             switch (userValidate) {
-                case "tenant":
+                case "Tenant":
                     System.out.println("Tenant Section");
                     HttpSession tenantSession = request.getSession();
+                    tenantSession.setMaxInactiveInterval(1*60);
                     tenantSession.setAttribute("currentUser", userName);
+                    tenantSession.setAttribute("currentPassword", password);
                     response.sendRedirect("/roomRent/user/index.jsp");
                     break;
-                case "owner":
+                case "Owner":
                     System.out.println("Owner Section");
                     HttpSession ownerSession = request.getSession();
+                    ownerSession.setMaxInactiveInterval(15);
+                    ownerSession.setAttribute("currentPassword", password);
                     ownerSession.setAttribute("currentUser", userName);
 
-                    response.sendRedirect("/user/index.jsp");
+                    response.sendRedirect("/roomRent/user/index.jsp");
                     break;
                 default:
                     System.out.println("Error message = " + userValidate);
@@ -66,7 +86,5 @@ public class LoginServalet extends HttpServlet {
             e2.printStackTrace();
         }
     }
-
-    
 
 }

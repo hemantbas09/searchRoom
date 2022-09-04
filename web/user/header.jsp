@@ -11,6 +11,7 @@
             <i class="fa-solid fa-house"></i>
             <span>Room</span>Finder
         </a>
+            
 
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +42,7 @@
                         <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/user/room.jsp">Room</a></li>
                         <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/user/flat.jsp">Flat</a></li>
                         <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/user/office.jsp">Office</a></li>
-                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/user/other.jsp">Other</a></li>
+                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/authentication/resetPassword.jsp">Other</a></li>
                     </ul>
                 </li>
                 <li class="nav-item nav1 nav2">

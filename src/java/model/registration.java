@@ -25,6 +25,19 @@ public class registration {
         this.confirmPassword = confirmPassword;
     }
 
+    
+
+    public registration(String username, String password,String confirmPassword) {
+        this.username = username;
+        this.password = password;
+        this.confirmPassword = confirmPassword;
+        
+    }
+
+    public registration() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
    
 
    

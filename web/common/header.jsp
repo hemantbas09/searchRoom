@@ -13,14 +13,14 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
 
-                
+
 
                 <li class="nav-item nav1 nav2" >
                     <a class="nav-link " href="${pageContext.request.contextPath}/index.jsp">Home</a>
                 </li>
 
 
-
+                
 
 
 
@@ -33,7 +33,7 @@
                         <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/user/room.jsp">Room</a></li>
                         <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/user/flat.jsp">Flat</a></li>
                         <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/user/office.jsp">Office</a></li>
-                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/user/other.jsp">Other</a></li>
+                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/authentication/resetPassword.jsp">Other</a></li>
                     </ul>
                 </li>
                 <li class="nav-item nav1 nav2">
@@ -43,14 +43,12 @@
                     <a class="nav-link " href="${pageContext.request.contextPath}/user/aboutus.jsp">About Us</a>
                 </li>
             </ul>
-            
-                    <a style="margin-right:7rem; " class="nav-link nav-item nav1 " href="${pageContext.request.contextPath}/user/search.jsp"><i class="fa-solid fa-magnifying-glass"></i></a>
-                
-            <a style="color: #ff9966;  /* fallback for old browsers */
-color: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  /* Chrome 10-25, Safari 5.1-6 */
-color: linear-gradient(to right, #ff5e62, #ff9966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-" class="nav-link nav-item nav1 " href="${pageContext.request.contextPath}/authentication/authentication.jsp"><i class="fa-solid fa-user-plus"></i></a>
-           
+
+            <a style="margin-right:3rem; " class="nav-link nav-item nav1 " href="${pageContext.request.contextPath}/user/search.jsp"><i class="fa-solid fa-magnifying-glass"></i></a>
+
+            <a 
+                class="nav-link nav-item nav1 " href="${pageContext.request.contextPath}/authentication/authentication.jsp"><i class="fa-solid fa-user"></i></i></a>
+
         </div>
 
     </div>

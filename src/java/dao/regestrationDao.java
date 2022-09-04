@@ -4,7 +4,9 @@
  */
 package dao;
 
+import config.dbConnection;
 import java.sql.*;
+import model.Login;
 import model.registration;
 
 /**
@@ -45,5 +47,8 @@ public class regestrationDao {
         return f;
 
     }
+    
 
 }
+
+

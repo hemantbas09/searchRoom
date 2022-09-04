@@ -16,6 +16,18 @@
         <servlet-name>logoutServalet</servlet-name>
         <servlet-class>view.logoutServalet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>forgetServalet</servlet-name>
+        <servlet-class>view.forgetServalet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>validateOtp</servlet-name>
+        <servlet-class>view.validateOtp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>resetPassword</servlet-name>
+        <servlet-class>view.resetPassword</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerServalet</servlet-name>
         <url-pattern>/registerServalet</url-pattern>
@@ -32,9 +44,21 @@
         <servlet-name>logoutServalet</servlet-name>
         <url-pattern>/logoutServalet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>forgetServalet</servlet-name>
+        <url-pattern>/forgetServalet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>validateOtp</servlet-name>
+        <url-pattern>/validateOtp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>resetPassword</servlet-name>
+        <url-pattern>/resetPassword</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
-            30
+            1
         </session-timeout>
     </session-config>
 </web-app>

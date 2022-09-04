@@ -4,6 +4,7 @@
  */
 package view;
 
+import com.dao.LoginDao;
 import config.dbConnection;
 import dao.regestrationDao;
 import java.io.IOException;
@@ -13,6 +14,7 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Login;
 import model.registration;
 
 /**
@@ -34,13 +36,13 @@ public class registerServalet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-
             String role = request.getParameter("role");
-            out.print(role);
+
             String name = request.getParameter("name");
-            out.print(name);
+
             String username = request.getParameter("username");
 
             String email = request.getParameter("email");
@@ -54,14 +56,34 @@ public class registerServalet extends HttpServlet {
 
             //create user dao oject:
             regestrationDao dao = new regestrationDao(dbConnection.createConnection());
-
-            if(password.equals(confirmPassword)){
-                dao.saveUser(user);
-            }
-            else{
-                out.println("Same Password rakh chutiya");
-            }
             
+
+            
+                
+                if (password.equals(confirmPassword)) {
+                    
+                    if (role.equals("Tenant") || role.equals("Owner")) {
+
+                       
+                        if( dao.saveUser(user)){
+                            out.println("done");
+                        
+                        }else{
+                            out.println("User name is Already Taken");
+                            
+                        }
+                    } else {
+
+                        out.println("Please Select Your Role");
+
+                    }
+                    
+                } else {
+                    out.println("Same Password rakh chutiya");
+                }
+                
+
+           
 
         }
     }

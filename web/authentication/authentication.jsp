@@ -16,8 +16,27 @@
 
     </head>
     <body>
+        
+        <%
+	    Cookie[] cookies=request.getCookies();
+	    String userName = "", password = "",rememberVal="";
+	    if (cookies != null) {
+	         for (Cookie cookie : cookies) {
+	           if(cookie.getName().equals("cookuser")) {
+	             userName = cookie.getValue();
+	           }
+	           if(cookie.getName().equals("cookpass")){
+	             password = cookie.getValue();
+	           }
+	           if(cookie.getName().equals("cookrem")){
+	             rememberVal = cookie.getValue();
+	           }
+	        }
+	    }
+	%>
+        
         <%@include file="../common/header.jsp" %>
-        <div style="margin: 5rem;" class="container">
+        <div style="margin: 2rem;" class="container">
             <input type="checkbox" id="flip">
             <div class="cover">
                 <div class="front">
@@ -44,21 +63,24 @@
                             <div class="input-boxes">
                                 <div class="input-box">
                                     <i class="fa-solid fa-user"></i>
-                                    <input name="loginusername" type="text" placeholder="Enter your Username" required>
+                                    <input name="loginusername" type="text" placeholder="Enter your Username" value="<%=userName%>" required>
                                 </div>
                                 <div class="input-box">
                                     <i class="fas fa-lock"></i>
-                                    <input name="loginpassword" type="password" placeholder="Enter your password" required>
+                                    <input name="loginpassword" type="password" placeholder="Enter your password" value="<%=password%>" required>
                                 </div>
                                 
                                 <div style="margin-left:-0.5rem;margin-right: 1rem; font-size:2rem" class="form-check mb-2 mr-sm-2">
-                                    <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                                    <input class="form-check-input" type="checkbox" id="inlineFormCheck" name="checkBox" value="0"
+                                            >
                                     <label class="form-check-label" for="inlineFormCheck">
                                         <h3>Remember me</h3>
                                     </label>
                                 </div>
+                               
 
-                                <div class="text d-flex flex-row-reverse"><a href="#">Forgot password?</a></div>
+                                
+                                <div class="text d-flex flex-row-reverse"><a href="${pageContext.request.contextPath}/authentication/forgotPassword.jsp">Forgot password?</a></div>
                                 <div class="button input-box">
                                     <input type="submit" value="Log In">
                                 </div>
@@ -81,7 +103,7 @@
                                 </div>
                                 <div class="input-box">
                                     <i class="fas fa-envelope"></i>
-                                    <input name="email" type="text" placeholder="Enter your email" required>
+                                    <input name="email" type="email" placeholder="Enter your email" required>
                                 </div>
                                 <div class="input-box">
                                     <i class="fas fa-lock"></i>
@@ -97,8 +119,8 @@
                                     <select name="role" class="input-box" id="inputState">
                                        
                                         <option>Select Your Role</option>
-                                        <option>tenant</option>
-                                        <option>owner</option>
+                                        <option>Tenant</option>
+                                        <option>Owner</option>
                                     </select>
                                 </div>
                                 <div class="button input-box">
@@ -112,6 +134,10 @@
             </div>
         </div>
         <%@include file="../common/footer.jsp" %>
+        
+        
+         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
         <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -124,7 +150,7 @@
                 $('#signup').on('submit', function (event) {
                     event.preventDefault();
                     let form = new FormData(this);
-                    $("#sumbimt-btn").hide();
+                    $("#submit-btn").hide();
                     $("#loader").show();
 //send register servlet:
                     $.ajax({
@@ -133,11 +159,11 @@
                         data: form,
                         success: function (data, textStatus, jqXHR) {
                             console.log(data);
-                            $("#sumbimt-btn").show();
+                            $("#submit-btn").show();
                             $("#loader").hide();
                             if (data.trim() === 'done')
                             {
-                                swal("Successfully Signup redisrec to the home page")
+                                swal("Successfully Signup redirect to the home page")
                                         .then((value) => {
                                             window.location = "${pageContext.request.contextPath}/index.jsp";
                                         });
@@ -147,10 +173,11 @@
                             }
                         },
                         error: function (jqXHR, textStatus, errorThrown) {
+                                                    
                             console.log(jqXHR);
-                            $("#sumbimt-btn").show();
+                            $("#submit-btn").show();
                             $("#loader").hide();
-                            swal("something went wrong..try again");
+                            swal("Username is already Taken");
 
 
                         },
