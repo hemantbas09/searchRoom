@@ -34,8 +34,7 @@ public class logoutServalet extends HttpServlet {
 
        
 
-        
-
+       
         if (session != null) //If session is not null
         {
             session.invalidate(); //removes all session attributes bound to the session

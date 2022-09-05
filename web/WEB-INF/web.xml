@@ -28,6 +28,10 @@
         <servlet-name>resetPassword</servlet-name>
         <servlet-class>view.resetPassword</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>propertyServalet</servlet-name>
+        <servlet-class>view.propertyServalet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerServalet</servlet-name>
         <url-pattern>/registerServalet</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>resetPassword</servlet-name>
         <url-pattern>/resetPassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>propertyServalet</servlet-name>
+        <url-pattern>/propertyServalet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

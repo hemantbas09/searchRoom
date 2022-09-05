@@ -11,9 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Register</title>
         <link href="../Static/css/authStyle.css" rel="stylesheet" type="text/css"/>
-        <%@include file="../common/cdn.jsp" %>
-        <link href="../Static/css/style.css" rel="stylesheet" type="text/css"/>  
-
+        <%@include file="../common/cdn.jsp" %> 
+        <link href="../Static/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         
