@@ -11,6 +11,8 @@
 
     </head>
     <body>
+        
+        
        
         <%@include file="common/header.jsp" %>
         <section class="home">

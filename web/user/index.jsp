@@ -19,13 +19,15 @@
         <%
             String username = (String) session.getAttribute("currentUser");
                         String password = (String) session.getAttribute("currentPassword");
+                        String role = (String) session.getAttribute("role");
             if (username == null) {
                 response.sendRedirect("/roomRent/index.jsp");
-            }
+            } 
         %>
         <h1> <%=username%> </h1>
         <h1> <%=password%> </h1>
-
+        <h1> <%=role%> </h1>
+           
         <%@include file="header.jsp" %>
         <section class="home">
 

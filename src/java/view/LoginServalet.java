@@ -62,6 +62,7 @@ public class LoginServalet extends HttpServlet {
                     tenantSession.setMaxInactiveInterval(1*60);
                     tenantSession.setAttribute("currentUser", userName);
                     tenantSession.setAttribute("currentPassword", password);
+                    tenantSession.setAttribute("role", userValidate);
                     response.sendRedirect("/roomRent/user/index.jsp");
                     break;
                 case "Owner":
@@ -70,6 +71,7 @@ public class LoginServalet extends HttpServlet {
                     ownerSession.setMaxInactiveInterval(15);
                     ownerSession.setAttribute("currentPassword", password);
                     ownerSession.setAttribute("currentUser", userName);
+                     ownerSession.setAttribute("role", userValidate);
 
                     response.sendRedirect("/roomRent/user/index.jsp");
                     break;

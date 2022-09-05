@@ -34,7 +34,21 @@
 	        }
 	    }
 	%>
-        
+        <%
+            String username = (String) session.getAttribute("currentUser");
+            String upassword = (String) session.getAttribute("currentPassword");
+            String role = (String) session.getAttribute("role");
+            if (username != null && role=="Tenant" ) {
+                response.sendRedirect("/roomRent/admin/dashBoard.jsp");
+                  
+            } else if( username != null && role=="Owner"){
+            response.sendRedirect("/roomRent/user/index.jsp");
+            
+            }
+        %>
+        <h1> <%=username%> </h1>
+        <h1> <%=upassword%> </h1>
+         <h1> <%=role%> </h1>
         <%@include file="../common/header.jsp" %>
         <div style="margin: 2rem;" class="container">
             <input type="checkbox" id="flip">
@@ -48,7 +62,7 @@
                     </div>
                 </div>
                 <div class="back">
-                    <img class="backImg" src="../Static/Image/homebanner.jpg" alt="">
+                    <img class="bhttp://localhost:8080/roomRent/authentication/authentication.jspackImg" src="../Static/Image/homebanner.jpg" alt="">
                     <div class="text">
                         <span class="text-1">Complete miles of journey <br> with one step</span>
                         <span class="text-2">Let's get started</span>
