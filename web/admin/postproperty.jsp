@@ -76,8 +76,9 @@
                             <h3 style="text-align: center; font-size: 30px;">Other Property Information</h3>
                             <div class="col-sm-12">
                                 <br>
-                                <textarea style="font-size: 60px" name="details" id="details" class="form-control" required="" placeholder="Details..."></textarea>
-                            </div>
+                                <textarea style="font-size: 20px" class="form-control" id="details" rows="10" placeholder="Please inform the "></textarea>
+                                
+                            </div
                         </div>
                         <br><br>
 
@@ -101,6 +102,6 @@
 </body>
 <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('details');
+    
 </script>
 </html>
