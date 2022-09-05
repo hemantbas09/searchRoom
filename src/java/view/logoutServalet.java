@@ -41,5 +41,9 @@ public class logoutServalet extends HttpServlet {
             response.sendRedirect("/roomRent/index.jsp");
             System.out.println("Logged out");
         }
+        else{
+           response.sendRedirect("/roomRent/index.jsp");
+        
+        }
     }
 }

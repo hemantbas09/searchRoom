@@ -1,4 +1,4 @@
-package view;
+/*package view;
 import dao.propertyDao;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -117,3 +117,5 @@ public class propertyServalet extends HttpServlet {
 	}
 
 }
+
+*/

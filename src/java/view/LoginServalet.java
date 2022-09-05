@@ -73,7 +73,7 @@ public class LoginServalet extends HttpServlet {
                     ownerSession.setAttribute("currentUser", userName);
                      ownerSession.setAttribute("role", userValidate);
 
-                    response.sendRedirect("/roomRent/user/index.jsp");
+                    response.sendRedirect("/roomRent/admin/index.jsp");
                     break;
                 default:
                     System.out.println("Error message = " + userValidate);
