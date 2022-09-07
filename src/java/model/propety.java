@@ -18,57 +18,64 @@ public class propety {
     private String propotyImage;
     private String propotyType;
     private String propotyLocation;
-    private String propotyFacilities;
+    private String contact;
     private String propotyPrice;
+    private String otherInformation;
 
     public propety() {
     }
 
-    
-    public propety(String username, String name, String propotyImage, String propotyType, String propotyLocation, String propotyFacilities, String propotyPrice, Date postDate, String otherInformation) {
+    public propety(String username, String name, String propotyImage, String propotyType, String propotyLocation, String contact, String propotyPrice, String otherInformation) {
         this.username = username;
         this.name = name;
         this.propotyImage = propotyImage;
         this.propotyType = propotyType;
         this.propotyLocation = propotyLocation;
-        this.propotyFacilities = propotyFacilities;
+        this.contact = contact;
         this.propotyPrice = propotyPrice;
-        this.postDate = postDate;
         this.otherInformation = otherInformation;
     }
 
-    public propety(int propetyId, String username, String name, String propotyImage, String propotyType, String propotyLocation, String propotyFacilities, String propotyPrice, String otherInformation) {
-        this.propetyId = propetyId;
-        this.username = username;
+    public propety(String name, String propotyImage, String propotyType, String propotyLocation, String contact, String propotyPrice, String otherInformation) {
         this.name = name;
         this.propotyImage = propotyImage;
         this.propotyType = propotyType;
         this.propotyLocation = propotyLocation;
-        this.propotyFacilities = propotyFacilities;
+        this.contact = contact;
         this.propotyPrice = propotyPrice;
         this.otherInformation = otherInformation;
     }
     
     
-    
-    
-    public propety(int propetyId, String username, String name, String propotyImage, String propotyType, String propotyLocation, String propotyFacilities, String propotyPrice, Date postDate, String otherInformation) {
+
+    public propety(int propetyId, String username, String name, String propotyImage, String propotyType, String propotyLocation, String contact, String propotyPrice, String otherInformation) {
         this.propetyId = propetyId;
         this.username = username;
         this.name = name;
         this.propotyImage = propotyImage;
         this.propotyType = propotyType;
         this.propotyLocation = propotyLocation;
-        this.propotyFacilities = propotyFacilities;
+        this.contact = contact;
         this.propotyPrice = propotyPrice;
-        this.postDate = postDate;
         this.otherInformation = otherInformation;
+    }
+
+    public propety(int id, String username, String name, String propertyType, String propertyLocation, String contact, String propertyPrice) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public propety(int id, String propertyName, String propertyImage, String propertyPrice, String contact, String propertyType, String propertyAddress, String propertyOtherDetails) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
    
 
+   
+   
+
     
     
+
     public int getPropetyId() {
         return propetyId;
     }
@@ -117,12 +124,12 @@ public class propety {
         this.propotyLocation = propotyLocation;
     }
 
-    public String getPropotyFacilities() {
-        return propotyFacilities;
+    public String getContact() {
+        return contact;
     }
 
-    public void setPropotyFacilities(String propotyFacilities) {
-        this.propotyFacilities = propotyFacilities;
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 
     public String getPropotyPrice() {
@@ -133,14 +140,6 @@ public class propety {
         this.propotyPrice = propotyPrice;
     }
 
-    public Date getPostDate() {
-        return postDate;
-    }
-
-    public void setPostDate(Date postDate) {
-        this.postDate = postDate;
-    }
-
     public String getOtherInformation() {
         return otherInformation;
     }
@@ -148,7 +147,12 @@ public class propety {
     public void setOtherInformation(String otherInformation) {
         this.otherInformation = otherInformation;
     }
-    private Date postDate;
-    private String otherInformation;
+
+    
+    
+    
 
 }
+
+
+    

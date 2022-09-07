@@ -59,7 +59,7 @@ public class LoginServalet extends HttpServlet {
                 case "Tenant":
                     System.out.println("Tenant Section");
                     HttpSession tenantSession = request.getSession();
-                    tenantSession.setMaxInactiveInterval(1);
+                    tenantSession.setMaxInactiveInterval(15);
                     tenantSession.setAttribute("currentUser", userName);
                     tenantSession.setAttribute("currentPassword", password);
                     tenantSession.setAttribute("role", userValidate);

@@ -21,7 +21,7 @@ public class dbConnection {
 
             if (con == null) {
                 //driver class load
-                Class.forName("com.mysql.cj.jdbc.Driver");
+                Class.forName("com.mysql.jdbc.Driver");
 
                 //create a connection..
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/searchRoom", "root", "");

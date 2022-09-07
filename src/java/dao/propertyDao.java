@@ -20,28 +20,28 @@ import org.apache.catalina.User;
  */
 public class propertyDao {
 
-    private static final String INSERT_PROPERTY_SQL = "INSERT INTO property" + "  (username, propImage, propHeading, PropType, propLocation,propFacilities,propPrice,otherInformation) VALUES "
-            + " (?, ?, ?,?,?,?,?,?,?,?);";
+    private static final String INSERT_PROPERTY_SQL = "INSERT INTO property" + "  (username,propImage, propHeading, PropType, propLocation,Contact,propPrice,otherInformation) VALUES "
+            + " (?,?,?,?,?,?,?,?);";
 
-    private static final String SELECT_PROPERTY_BY_ID = "select propetyId,username, propImage, propHeading, PropType, propLocation,propFacilities,propPrice,otherInformationy from property where propotyId =?";
+    private static final String SELECT_PROPERTY_BY_ID = "select propetyId,username, propImage, propHeading, PropType, propLocation,Contact,propPrice,otherInformationy from property where propotyId =?";
     private static final String SELECT_ALL_PROPERTY = "select * from property";
     private static final String DELETE_PROPERTY_SQL = "delete from property where propotyId = ?;";
-    private static final String UPDATE_PROPERTY_SQL = "update property set username=?, propImage=?, propHeading=?, PropType=?, propLocation=?,propFacilities=?,propPrice=?,otherInformationy=? from property where propotyId =? ";
+    private static final String UPDATE_PROPERTY_SQL = "update property set username=?, propImage=?, propHeading=?, PropType=?, propLocation=?,Contact=?,propPrice=?,otherInformationy=? from property where propotyId =? ";
 
     public propertyDao() {
     }
 
 //    Inser User:
-    public void insertUser(propety Property) throws SQLException {
+    public void insertProperty(propety Property) throws SQLException {
         System.out.println(INSERT_PROPERTY_SQL);
         // try-with-resource statement will auto close the connection.
         try ( Connection connection = createConnection();  PreparedStatement preparedStatement = connection.prepareStatement(INSERT_PROPERTY_SQL)) {
             preparedStatement.setString(1, Property.getUsername());
-            preparedStatement.setString(2, Property.getName());
-            preparedStatement.setString(3, Property.getPropotyImage());
+            preparedStatement.setString(2, Property.getPropotyImage());
+            preparedStatement.setString(3, Property.getName());
             preparedStatement.setString(4, Property.getPropotyType());
             preparedStatement.setString(5, Property.getPropotyLocation());
-            preparedStatement.setString(6, Property.getPropotyFacilities());
+            preparedStatement.setString(6, Property.getContact());
             preparedStatement.setString(7, Property.getPropotyPrice());
             preparedStatement.setString(8, Property.getOtherInformation());
 
@@ -49,10 +49,12 @@ public class propertyDao {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             printSQLException(e);
+            System.out.println("Nepal");
+
         }
     }
 
-    public User selectUser(int id) {
+    public User selectProperty(int id) {
         User user = null;
         // Step 1: Establishing a Connection
         try ( Connection connection = createConnection(); // Step 2:Create a statement using connection object
@@ -64,17 +66,18 @@ public class propertyDao {
 
             // Step 4: Process the ResultSet object.
             while (rs.next()) {
+                
                 String username = rs.getString("username");
                 String name = rs.getString("propHeading");
                 String propertyImage = rs.getString("propImage");
                 String propertyType = rs.getString("PropType");
                 String propertyLocation = rs.getString("propLocation");
-                String propertyFacilities = rs.getString("propFacilities");
+                String contact = rs.getString("Contact");
                 String propertyPrice = rs.getString("propPrice");
-
                 String OtherInformation = rs.getString("otherInformation");
 
-                user = (User) new propety(id, username, name, propertyImage, propertyType, propertyLocation, propertyFacilities, propertyPrice, OtherInformation);
+                user = (User) new propety(id, username, name, propertyImage, propertyType, propertyLocation, contact, propertyPrice, OtherInformation);
+            System.out.println(user);
             }
         } catch (SQLException e) {
             printSQLException(e);
@@ -82,29 +85,33 @@ public class propertyDao {
         return user;
     }
 
-    public List<propety> selectAllUsers() {
+    public List<User> selectAllProperty() {
 
         // using try-with-resources to avoid closing resources (boiler plate code)
-        List<propety> users = new ArrayList<>();
+        List<User> users = new ArrayList<>();
         // Step 1: Establishing a Connection
         try ( Connection connection = createConnection(); // Step 2:Create a statement using connection object
                   PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_PROPERTY);) {
-            System.out.println(preparedStatement);
+            System.out.println("This is prepead statement"+preparedStatement);
             // Step 3: Execute the query or update query
             ResultSet rs = preparedStatement.executeQuery();
 
             // Step 4: Process the ResultSet object.
             while (rs.next()) {
-                int id = rs.getInt("id");
-               String username = rs.getString("username");
+                int id = rs.getInt("propotyId");
+                System.out.println("This is prepead statement"+id );
+                String username = rs.getString("username");
                 String name = rs.getString("propHeading");
                 String propertyImage = rs.getString("propImage");
                 String propertyType = rs.getString("PropType");
                 String propertyLocation = rs.getString("propLocation");
-                String propertyFacilities = rs.getString("propFacilities");
+                String contact = rs.getString("Contact");
                 String propertyPrice = rs.getString("propPrice");
                 String OtherInformation = rs.getString("otherInformation");
-                users.add(new propety (id, username, name, propertyImage, propertyType, propertyLocation, propertyFacilities, propertyPrice, OtherInformation));
+                users.add((User) new propety(id, username, name, propertyImage, propertyType, propertyLocation, contact, propertyPrice, OtherInformation));
+           System.out.println(users);
+
+           
             }
         } catch (SQLException e) {
             printSQLException(e);
@@ -112,7 +119,7 @@ public class propertyDao {
         return users;
     }
 
-    public boolean deleteUser(int id) throws SQLException {
+    public boolean deleteProperty(int id) throws SQLException {
         boolean rowDeleted;
         try ( Connection connection = createConnection();  PreparedStatement statement = connection.prepareStatement(DELETE_PROPERTY_SQL);) {
             statement.setInt(1, id);
@@ -121,21 +128,18 @@ public class propertyDao {
         return rowDeleted;
     }
 
-    public boolean updateUser(propety Property) throws SQLException {
+    public boolean updateProperty(propety Property) throws SQLException {
         boolean rowUpdated;
-        try ( 
-                Connection connection = createConnection();  
-                PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_PROPERTY_SQL);)
-        
-        {
+        try (
+                 Connection connection = createConnection();  PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_PROPERTY_SQL);) {
             System.out.println("updated USer:" + preparedStatement);
-           
+
             preparedStatement.setString(1, Property.getUsername());
             preparedStatement.setString(2, Property.getName());
             preparedStatement.setString(3, Property.getPropotyImage());
             preparedStatement.setString(4, Property.getPropotyType());
             preparedStatement.setString(5, Property.getPropotyLocation());
-            preparedStatement.setString(6, Property.getPropotyFacilities());
+            preparedStatement.setString(6, Property.getContact());
             preparedStatement.setString(7, Property.getPropotyPrice());
             preparedStatement.setString(8, Property.getOtherInformation());
             preparedStatement.setInt(9, Property.getPropetyId());

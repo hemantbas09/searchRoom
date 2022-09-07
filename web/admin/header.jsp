@@ -36,7 +36,7 @@
 
 
                 <li class="nav-item nav1 nav2">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/MyProperties.js">MyProperties</a>
+                    <a class="nav-link" href="<%= request.getContextPath()%>/list">MyProperties</a>
                 </li>
                 <li class="nav-item nav1 nav2">
                     <a class="nav-link " href="${pageContext.request.contextPath}/user/aboutus.jsp">About Us</a>

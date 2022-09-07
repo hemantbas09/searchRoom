@@ -32,6 +32,10 @@
         <servlet-name>propertyServalet</servlet-name>
         <servlet-class>view.propertyServalet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Property</servlet-name>
+        <servlet-class>view.Property</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerServalet</servlet-name>
         <url-pattern>/registerServalet</url-pattern>
@@ -61,12 +65,19 @@
         <url-pattern>/resetPassword</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>Property</servlet-name>
+        <url-pattern>/Property</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>propertyServalet</servlet-name>
-        <url-pattern>/propertyServalet</url-pattern>
+        <url-pattern>/insert</url-pattern>
+        <url-pattern>/edit</url-pattern>
+         <url-pattern>/delete</url-pattern>
+          <url-pattern>/list</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
-            1
+            10
         </session-timeout>
     </session-config>
 </web-app>
