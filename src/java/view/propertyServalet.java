@@ -29,32 +29,12 @@ public class propertyServalet extends HttpServlet {
 
     }
 
- /*public void init() {
-        propertyDao = new propertyDao();
-    }*/
+ 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-      ;
-        /*
-        String contact = request.getParameter("contact");
-        String propertyName = request.getParameter("propertyname");
-        System.out.println("Property Name ="+propertyName);
-        System.out.println("Contact Us ="+contact);
-        String propertyImage = request.getParameter("file");
-        System.out.println("propertyImage="+propertyImage);
-        String propertyPrice = request.getParameter("price");
-        System.out.println("propertyPrice="+propertyPrice);
-        String propertyType = request.getParameter("ptype");
-        System.out.println(" propertyType="+ propertyType);
-        String propertyAddress = request.getParameter("address");
-        System.out.println("propertyAddress="+propertyAddress);
-        String propertyOtherDetails = request.getParameter("otherDetails");
-        System.out.println("Details="+propertyOtherDetails);
-        
-        propety newProperty = new propety(propertyName, propertyImage, propertyPrice, contact, propertyType, propertyAddress, propertyOtherDetails);
-        System.out.println("All="+newProperty);
-    }*/
+      
+       
         doGet(request, response);
 
     }
@@ -63,12 +43,6 @@ public class propertyServalet extends HttpServlet {
             throws ServletException, IOException {
         String action = request.getServletPath();
         
-        
-       
-         
-         
-        
-
         try {
             switch (action) {
                 case "/new":
@@ -81,7 +55,13 @@ public class propertyServalet extends HttpServlet {
                     deleteProperty(request, response);
                     break;
                 case "/edit":
-                    showEditForm(request, response);
+                    try{
+                        showEditForm(request, response);
+                    }catch(IOException | SQLException | ServletException e){
+                        
+                        System.out.print(e);
+                                }
+                    
                     break;
                 case "/update":
                     updateProperty(request, response);
@@ -97,17 +77,14 @@ public class propertyServalet extends HttpServlet {
 
     private void listProperty(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
-        try{
-        List <User> listProperty = propertyDao.selectAllProperty();
-        System.out.print("Chup lag"+listProperty);
-        request.setAttribute("listProperty", listProperty);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("admin/MyProperties.jsp");
-        dispatcher.forward(request, response);
-        }catch(Exception e){
-            e.printStackTrace();
-            System.out.print("K vayo k"+e);
         
-        }
+        List <propety> listProperty = propertyDao.selectAllProperty();
+        System.out.print(" Chal bey Thank You:"+listProperty);
+        request.setAttribute("listProperty", listProperty);
+        /*response.sendRedirect("admin/MyProperties.jsp");*/
+       RequestDispatcher dispatcher = request.getRequestDispatcher("admin/MyProperties.jsp");
+        dispatcher.forward(request, response);
+       
     }
 
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)
@@ -118,10 +95,10 @@ public class propertyServalet extends HttpServlet {
 
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("propertyId"));
         User existingUser = propertyDao.selectProperty(id);
         RequestDispatcher dispatcher = request.getRequestDispatcher("admin/editForm.jsp");
-        request.setAttribute("user", existingUser);
+        request.setAttribute("property", existingUser);
         dispatcher.forward(request, response);
 
     }
@@ -164,9 +141,18 @@ private void updateProperty(HttpServletRequest request, HttpServletResponse resp
 
     private void deleteProperty(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        propertyDao.deleteProperty(id);
+        int id = Integer.parseInt(request.getParameter("propertyId"));
+        System.out.print("row"+id);
+        try{
+              System.out.print("row"+id);
+        propertyDao. deleteProperty(id);
         response.sendRedirect("list");
+        
+        }catch(Exception e){
+         System.out.print("row"+ e);
+        }
+       
+        
 
     } 
 

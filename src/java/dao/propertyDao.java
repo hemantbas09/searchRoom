@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dao;
 
 import static config.dbConnection.createConnection;
@@ -26,7 +22,7 @@ public class propertyDao {
     private static final String SELECT_PROPERTY_BY_ID = "select propetyId,username, propImage, propHeading, PropType, propLocation,Contact,propPrice,otherInformationy from property where propotyId =?";
     private static final String SELECT_ALL_PROPERTY = "select * from property";
     private static final String DELETE_PROPERTY_SQL = "delete from property where propotyId = ?;";
-    private static final String UPDATE_PROPERTY_SQL = "update property set username=?, propImage=?, propHeading=?, PropType=?, propLocation=?,Contact=?,propPrice=?,otherInformationy=? from property where propotyId =? ";
+    private static final String UPDATE_PROPERTY_SQL = "update property set username=?, propImage=?, propHeading=?, PropType=?, propLocation=?,Contact=?,propPrice=?,otherInformationy=? from property where propotyId =?; ";
 
     public propertyDao() {
     }
@@ -85,22 +81,22 @@ public class propertyDao {
         return user;
     }
 
-    public List<User> selectAllProperty() {
+    public List<propety> selectAllProperty() {
 
         // using try-with-resources to avoid closing resources (boiler plate code)
-        List<User> users = new ArrayList<>();
+        List<propety> users = new ArrayList<>();
         // Step 1: Establishing a Connection
         try ( Connection connection = createConnection(); // Step 2:Create a statement using connection object
                   PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_PROPERTY);) {
-            System.out.println("This is prepead statement"+preparedStatement);
+//            System.out.println("This is prepead statement"+preparedStatement);
             // Step 3: Execute the query or update query
             ResultSet rs = preparedStatement.executeQuery();
 
             // Step 4: Process the ResultSet object.
             while (rs.next()) {
                 int id = rs.getInt("propotyId");
-                System.out.println("This is prepead statement"+id );
-                String username = rs.getString("username");
+                System.out.println("This is prepead statement "+id );
+               String username = rs.getString("username");
                 String name = rs.getString("propHeading");
                 String propertyImage = rs.getString("propImage");
                 String propertyType = rs.getString("PropType");
@@ -108,14 +104,14 @@ public class propertyDao {
                 String contact = rs.getString("Contact");
                 String propertyPrice = rs.getString("propPrice");
                 String OtherInformation = rs.getString("otherInformation");
-                users.add((User) new propety(id, username, name, propertyImage, propertyType, propertyLocation, contact, propertyPrice, OtherInformation));
-           System.out.println(users);
-
-           
+                users.add( new propety(id,username,name,propertyImage, propertyType,  propertyLocation, contact,propertyPrice, OtherInformation));
+            
             }
         } catch (SQLException e) {
             printSQLException(e);
         }
+         System.out.println("hello Dao"+users);
+         
         return users;
     }
 

@@ -60,13 +60,24 @@ public class propety {
         this.otherInformation = otherInformation;
     }
 
-    public propety(int id, String username, String name, String propertyType, String propertyLocation, String contact, String propertyPrice) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
+
+    
 
     public propety(int id, String propertyName, String propertyImage, String propertyPrice, String contact, String propertyType, String propertyAddress, String propertyOtherDetails) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    public propety(String id, String name, String propertyType, String propertyPrice, String propertyLocation, String contact) {
+       
+    }
+
+    
+
+    
+
+    
+
 
    
 

@@ -38,7 +38,7 @@
 
                             <div class="col-sm-2">
                                 <label for="file">Select images</label>
-                                <input class="upload-box" type="file"  name="file">
+                                <input class="upload-box" type="file"  name="file" multiple>
                             </div>
 
                             <div class="col-sm-4">

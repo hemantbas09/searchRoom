@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
                 <h1 style="text-align: center">About Property</h1>
                 <div class="row">
 
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" style="font-size: 25px">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -29,39 +29,43 @@
                         </thead>
 
 
-
                         <tbody>
-                        <c:forEach var="property" items="${listProperty}">
-                            <h1>The id is:<c:out  value="${property.id}"><h1>
-                            <tr>
-                                <th><c:out  value="${property.id}"></th>
-
-                                <td><c:out  value="${property.propHeading}"></td>
-                                    <td><c:out  value="${property.propType}"></td>
-
-                                        <td><c:out  value="${property.propPrice}"></td>
-                                            <td><c:out  value="${property.propLocation}"></td>
-                                                <th><c:out  value="${property.Contact}"></th>
 
 
-                                                    <th>
-                                                    <c:out  value="${property.id}">
-
-                                                        <a type="button" class="btn btn-success" href="<%= request.getContextPath()%>/edit?id=<c:out  value=' ${property.id}'/>">Edit</a>
-                                                        <a type="button" class="btn btn-success" href="<%= request.getContextPath()%>/delete?id= <c:out  value=' ${property.id}'/>">Delete</a>
 
 
-                                                        </th>
-                                                        </tr>
-                                                        </tbody>
-
-                                                        </table>
 
 
-                                                        <div>This is About Us Page</div>
-                                                        </div>
-                                                        </section>
-                                                        </div>
-                                                        <%@include file="../common/footer.jsp" %>
-                                                        </body>
-                                                        </html>
+
+
+                            <c:forEach   var="property" items="${listProperty}">
+                             
+
+
+                                <tr>
+                                    <td>${property.propetyId}</td>
+                                    <td>${property.name}</td>
+                                    <td>${property.propotyType}</td>
+                                    <td> ${property.propotyPrice}</td>
+                                    <td> ${property.propotyLocation}</td>
+                                    <td>  ${property.contact}</td>
+                                    <td>
+
+                                        <a type="button" class="btn btn-success" href="edit?propertyId=<c:out value='${property.propetyId}'/>">Edit</a>
+                                           <a type="button" class="btn btn-success" href="delete?propertyId=<c:out value='${property.propetyId}'/>">Delete</a>
+
+
+                                               </td>
+                                               </tr>
+                                                     
+                                           </c:forEach>
+
+
+                                               </tbody>
+                                               </table>
+                                               </div>
+                                               </section>
+                                               </div>
+                                               <%@include file="../common/footer.jsp" %>
+                                               </body>
+                                               </html>
