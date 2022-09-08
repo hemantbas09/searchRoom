@@ -45,9 +45,6 @@
             
             }
         %>
-        <h1> <%=username%> </h1>
-        <h1> <%=upassword%> </h1>
-         <h1> <%=role%> </h1>
         <%@include file="../common/header.jsp" %>
         <div style="margin: 2rem;" class="container">
             <input type="checkbox" id="flip">

@@ -24,16 +24,12 @@
                 response.sendRedirect("/roomRent/index.jsp");
             } 
         %>
-        <h1> <%=username%> </h1>
-        <h1> <%=password%> </h1>
-        <h1> <%=role%> </h1>
-           
         <%@include file="header.jsp" %>
         <section class="home">
 
             <div class="content">
-                <h3>Find Perfect Home to live with your family</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia repellat aperiam libero, beatae debitis iusto quia sit aliquid placeat facilis?</p>
+                <h3>Give Your Room In Rent To The Best Tenent</h3>
+                <p>Add Room in this platform and find <br> the tenet in the short time peroid.</p>
                 <a href="" class="btn">Find Property</a>
             </div>
 
@@ -41,18 +37,12 @@
                 <img src="${pageContext.request.contextPath}/Static/Image/home.svg" alt="">
             </div>
 
-        </section>
-
-        <h3 class="indexProperty" ><strong>All Property</strong></h3>
-        <section class="course">
-
-
-        </section>
-
+        
 
         <section class="footer">
             <div class="img1">
-                <img src="Static/Image/homebanner.jpg" alt=""/>
+                <img src="../Static/Image/adminBanner.jpg" alt=""/>
+                
             </div>
         </section> 
 

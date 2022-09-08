@@ -23,8 +23,9 @@
     </p>
 
     <div class="d-flex justify-content-between">
+        
         <a href= "${pageContext.request.contextPath}/authentication/authentication.jsp" class=" btn "  href="#">Message</a>
-        <a href="#" class="btn ">More Details</a>
+        <a href="${pageContext.request.contextPath}/user/moreDetails.jsp" class="btn ">More Details</a>
     </div>
     <div class="icons">
         <p><i class="far fa-clock"></i> 2 days ago</p>

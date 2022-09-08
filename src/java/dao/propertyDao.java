@@ -22,7 +22,7 @@ public class propertyDao {
     private static final String SELECT_PROPERTY_BY_ID = "select propotyId,username, propImage, propHeading, PropType, propLocation,Contact,propPrice,otherInformation from property where propotyId =?";
     private static final String SELECT_ALL_PROPERTY = "select * from property";
     private static final String DELETE_PROPERTY_SQL = "delete from property where propotyId = ?;";
-    private static final String UPDATE_PROPERTY_SQL = "update property set username=?, propImage=?, propHeading=?, PropType=?, propLocation=?,Contact=?,propPrice=?,otherInformationy=? from property where propotyId =?; ";
+    private static final String UPDATE_PROPERTY_SQL = "update property set propHeading=?,PropType=?,propLocation=?,Contact=?,propPrice=?,otherInformation=? where propotyId =?; ";
 
     public propertyDao() {
     }
@@ -32,6 +32,8 @@ public class propertyDao {
         System.out.println(INSERT_PROPERTY_SQL);
         // try-with-resource statement will auto close the connection.
         try ( Connection connection = createConnection();  PreparedStatement preparedStatement = connection.prepareStatement(INSERT_PROPERTY_SQL)) {
+            
+            
             preparedStatement.setString(1, Property.getUsername());
             preparedStatement.setString(2, Property.getPropotyImage());
             preparedStatement.setString(3, Property.getName());
@@ -96,7 +98,7 @@ public class propertyDao {
             while (rs.next()) {
                 int id = rs.getInt("propotyId");
                 System.out.println("This is prepead statement "+id );
-               String username = rs.getString("username");
+                String username = rs.getString("username");
                 String name = rs.getString("propHeading");
                 String propertyImage = rs.getString("propImage");
                 String propertyType = rs.getString("PropType");
@@ -127,20 +129,26 @@ public class propertyDao {
     public boolean updateProperty(propety Property) throws SQLException {
         boolean rowUpdated;
         try (
-                 Connection connection = createConnection();  PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_PROPERTY_SQL);) {
-            System.out.println("updated USer:" + preparedStatement);
-
-            preparedStatement.setString(1, Property.getUsername());
-            preparedStatement.setString(2, Property.getName());
-            preparedStatement.setString(3, Property.getPropotyImage());
-            preparedStatement.setString(4, Property.getPropotyType());
-            preparedStatement.setString(5, Property.getPropotyLocation());
-            preparedStatement.setString(6, Property.getContact());
-            preparedStatement.setString(7, Property.getPropotyPrice());
-            preparedStatement.setString(8, Property.getOtherInformation());
-            preparedStatement.setInt(9, Property.getPropetyId());
-
-            rowUpdated = preparedStatement.executeUpdate() > 0;
+                 Connection connection = createConnection();  
+                PreparedStatement updateStatement = connection.prepareStatement(UPDATE_PROPERTY_SQL);) {
+            
+             System.out.println("Hemant Basnet");
+              System.out.println(Property);
+            
+            
+             
+//             updateStatement.setString(1, Property.getPropotyImage());
+             updateStatement.setString(1, Property.getName());
+             updateStatement.setString(2, Property.getPropotyType());
+             updateStatement.setString(3, Property.getPropotyLocation());
+             updateStatement.setString(4, Property.getContact());
+             updateStatement.setString(5, Property.getPropotyPrice());
+             updateStatement.setString(6, Property.getOtherInformation());
+             updateStatement.setInt(7, Property.getPropetyId());
+            rowUpdated =  updateStatement.executeUpdate() > 0;
+            System.out.println("updated USer===" +  updateStatement);
+             System.out.println(rowUpdated);
+           
         }
         return rowUpdated;
     }

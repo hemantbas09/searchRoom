@@ -29,7 +29,10 @@
                         <div >
 
                             <p style="margin-top: 4rem; font-size: 2.5rem;">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                             <span style="color:red"> RoomFinder</span> is a platform where you can find the Rental Property According to your need and startup founded with the hope of serving the home seeker,dreamers.
+                                <span style="color:red"> RoomFinder</span> being a comprehensive competing national site, is a digital platform having a wide spectrum of visual                               community catering unparalleled services with conceivable property listings and their details. With the knowledge                              of real estate setting.<span style="color:red"> RoomFinder</span> aims to continuously explore new ideas and technology to make property search                                easier and faster; as well as bringing home owners and home professionals together.
+
+                                <span style="color:red"> RoomFinder</span> serves innovative ideas and targets to be a leading full-service real estate company with the aim Finding properties as cost effective as possible while maintaining the highest level of impeccable quality service. By enhancing the quality of life through active community involvement, <span style="color:red"> RoomFinder</span> aspires to grow every single day.
                             </p>
                         </div>
                     </div>

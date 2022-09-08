@@ -3,8 +3,8 @@
     <div class="box-container">
 
         <div class="box" style="text-align: center;">
-            <h3 >about us</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, maxime!</p>
+            <h3 >About Us</h3>
+            <p style="font-size: 2.3rem" ><span style="color:red"> RoomFinder</span> is a platform where you can find the Rental Property According to your need and startup founded with the hope of serving the home seeker,dreamers.</p>
         </div>
 
         <div class="box" style="text-align: center;">

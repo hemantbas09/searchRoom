@@ -41,13 +41,13 @@
                                 <label for="propertyId">ID:</label><br>
                                 <input type="text" id="propertyId" name="propertyId" value="${property.propetyId}"><br><br>
                             </div>
-
+                            <!--<!-- 
                             <div class="col-sm-2">
                                 <label for="file">Select images</label>
-                                <input class="upload-box" type="file"  name="file" value="${property.propotyImage}">
+                                <input class="upload-box" type="file"  name="file">
                             </div>
-                            
-                              <img src="${property.propotyImage}" alt="Italian Trulli">
+                            comment -->
+
                             <div class="col-sm-4">
                                 <label>Price</label>
                                 <input value="${property.propotyPrice}" style="font-size: 20px" type="text" name="price" class="form-control" required="">

@@ -19,12 +19,14 @@
             
             <div class="content">
                 <h3>Find Perfect Home to live with your family</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia repellat aperiam libero, beatae debitis iusto quia sit aliquid placeat facilis?</p>
+                <p>Whether you’re looking for  property for rent, <span style="color: red">RoomFinder</span> We will help you find your dream house in just a few seconds.
+
+We offer our clients a wealth of knowledge regarding all aspects of property Rent. Whether it is helping you search for your dream home.We would love the opportunity to help.</p>
                 <a href="allProperty.jsp" class="btn">Find Property</a>
             </div>
 
             <div class="image">
-                <img src="${pageContext.request.contextPath}/Static/Image/home.svg" alt="">
+                <img src="${pageContext.request.contextPath}/Static/Image/home2.svg" alt="">
             </div>
 
         </section>

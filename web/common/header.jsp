@@ -11,42 +11,13 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-
-
-
-                <li class="nav-item nav1 nav2" >
-                    <a class="nav-link " href="${pageContext.request.contextPath}/index.jsp">Home</a>
-                </li>
-
-
-                
-
-
-
-
-                <li class="nav-item dropdown nav1 nav2">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Property
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/user/room.jsp">Room</a></li>
-                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/user/flat.jsp">Flat</a></li>
-                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/user/office.jsp">Office</a></li>
-                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/authentication/resetPassword.jsp">Other</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item nav1 nav2">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/user/post.jsp">Post</a>
-                </li>
-                <li class="nav-item nav1 nav2">
-                    <a class="nav-link " href="${pageContext.request.contextPath}/user/aboutus.jsp">About Us</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="">
+                    
                 </li>
             </ul>
-
-            <a style="margin-right:3rem; " class="nav-link nav-item nav1 " href="${pageContext.request.contextPath}/user/search.jsp"><i class="fa-solid fa-magnifying-glass"></i></a>
-
-            <a 
+            <a  class="nav-link nav-item nav1 nav2" href="${pageContext.request.contextPath}/user/aboutus.jsp">About Us</a>
+            <a  style="margin-right:2rem ;margin-left: 2rem"
                 class="nav-link nav-item nav1 " href="${pageContext.request.contextPath}/authentication/authentication.jsp"><i class="fa-solid fa-user"></i></i></a>
 
         </div>

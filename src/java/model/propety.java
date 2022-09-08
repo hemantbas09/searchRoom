@@ -22,7 +22,18 @@ public class propety {
     private String propotyPrice;
     private String otherInformation;
 
-    public propety() {
+    public propety(String propertyName, String propertyType, String propertyAddress, String contact1, String propertyPrice, String propertyOtherDetails, int id) {
+
+        
+        this.name = propertyName;
+//        this.propotyImage = propotyImage;
+        this.propotyType = propertyType;
+        this.propotyLocation = propertyAddress;
+        this.contact =  contact1;
+        this.propotyPrice = propertyPrice;
+        this.otherInformation = propertyOtherDetails;
+        this.propetyId= id;
+
     }
 
     public propety(String username, String name, String propotyImage, String propotyType, String propotyLocation, String contact, String propotyPrice, String otherInformation) {
@@ -45,8 +56,6 @@ public class propety {
         this.propotyPrice = propotyPrice;
         this.otherInformation = otherInformation;
     }
-    
-    
 
     public propety(int propetyId, String username, String name, String propotyImage, String propotyType, String propotyLocation, String contact, String propotyPrice, String otherInformation) {
         this.propetyId = propetyId;
@@ -60,32 +69,9 @@ public class propety {
         this.otherInformation = otherInformation;
     }
 
-   
-
-    
-
-    public propety(int id, String propertyName, String propertyImage, String propertyPrice, String contact, String propertyType, String propertyAddress, String propertyOtherDetails) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     public propety(String id, String name, String propertyType, String propertyPrice, String propertyLocation, String contact) {
-       
+
     }
-
-    
-
-    
-
-    
-
-
-   
-
-   
-   
-
-    
-    
 
     public int getPropetyId() {
         return propetyId;
@@ -159,11 +145,4 @@ public class propety {
         this.otherInformation = otherInformation;
     }
 
-    
-    
-    
-
 }
-
-
-    

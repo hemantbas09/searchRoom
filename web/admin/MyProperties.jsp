@@ -49,8 +49,6 @@
                                     <td> ${property.propotyPrice}</td>
                                     <td> ${property.propotyLocation}</td>
                                     <td>  ${property.contact}</td>
-                                    <td><h1>This is the Information:</h1>${property.otherInformation}</td>
-                                    <td><h1>This is the Information:</h1>${property.propotyImage}</td>
                                     <td>
 
                                         <a type="button" class="btn btn-success" href="edit?propertyId=<c:out value='${property.propetyId}'/>">Edit</a>
