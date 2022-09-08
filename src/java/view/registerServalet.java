@@ -4,7 +4,7 @@
  */
 package view;
 
-import com.dao.LoginDao;
+import dao.LoginDao;
 import config.dbConnection;
 import dao.regestrationDao;
 import java.io.IOException;

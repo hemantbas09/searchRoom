@@ -4,7 +4,7 @@
  */
 package view;
 
-import com.dao.LoginDao;
+import dao.LoginDao;
 import java.io.IOException;
 
 import javax.servlet.ServletException;

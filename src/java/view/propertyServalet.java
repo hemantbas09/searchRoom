@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.propety;
-import org.apache.catalina.User;
 
 //@WebServlet("/postproperty")
 @MultipartConfig(maxFileSize = 16177215)
