@@ -55,12 +55,9 @@ public class propertyServalet extends HttpServlet {
                     deleteProperty(request, response);
                     break;
                 case "/edit":
-                    try{
+                   
                         showEditForm(request, response);
-                    }catch(IOException | SQLException | ServletException e){
-                        
-                        System.out.print(e);
-                                }
+                    
                     
                     break;
                 case "/update":
@@ -96,7 +93,9 @@ public class propertyServalet extends HttpServlet {
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("propertyId"));
-        User existingUser = propertyDao.selectProperty(id);
+        System.out.println("THis is the edit form "+ id);
+        propety existingUser = propertyDao.selectProperty(id);
+        System.out.println("THis is the edit form "+ existingUser);
         RequestDispatcher dispatcher = request.getRequestDispatcher("admin/editForm.jsp");
         request.setAttribute("property", existingUser);
         dispatcher.forward(request, response);
@@ -126,7 +125,13 @@ public class propertyServalet extends HttpServlet {
 
 private void updateProperty(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
+   
+
+        
+    try{
+        String ids = request.getParameter("propertyId");
+        int id = Integer.parseInt(ids);
+        System.out.print(id+"This is the update form:");
         String contact = request.getParameter("contact");
         String propertyName = request.getParameter("propertyname");
         String propertyImage = request.getParameter("file");
@@ -134,9 +139,18 @@ private void updateProperty(HttpServletRequest request, HttpServletResponse resp
         String propertyType = request.getParameter("ptype");
         String propertyAddress = request.getParameter("address");
         String propertyOtherDetails = request.getParameter("otherDetails");
-        propety updateProperty = (propety) new propety(id, propertyName, propertyImage, propertyPrice, contact, propertyType, propertyAddress, propertyOtherDetails);
+         System.out.println("Why are u Running"+ propertyOtherDetails);
+        propety updateProperty = (propety)new propety(id, propertyName, propertyImage, propertyPrice, contact, propertyType, propertyAddress, propertyOtherDetails);
+                System.out.print("Why are u Running"+updateProperty);
         propertyDao.updateProperty(updateProperty);
+
         response.sendRedirect("list");
+        }
+        catch(Exception e){
+                System.out.println(e);
+                System.out.println("THis is an error");
+                
+                }
     }
 
     private void deleteProperty(HttpServletRequest request, HttpServletResponse response)

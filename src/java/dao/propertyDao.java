@@ -19,7 +19,7 @@ public class propertyDao {
     private static final String INSERT_PROPERTY_SQL = "INSERT INTO property" + "  (username,propImage, propHeading, PropType, propLocation,Contact,propPrice,otherInformation) VALUES "
             + " (?,?,?,?,?,?,?,?);";
 
-    private static final String SELECT_PROPERTY_BY_ID = "select propetyId,username, propImage, propHeading, PropType, propLocation,Contact,propPrice,otherInformationy from property where propotyId =?";
+    private static final String SELECT_PROPERTY_BY_ID = "select propotyId,username, propImage, propHeading, PropType, propLocation,Contact,propPrice,otherInformation from property where propotyId =?";
     private static final String SELECT_ALL_PROPERTY = "select * from property";
     private static final String DELETE_PROPERTY_SQL = "delete from property where propotyId = ?;";
     private static final String UPDATE_PROPERTY_SQL = "update property set username=?, propImage=?, propHeading=?, PropType=?, propLocation=?,Contact=?,propPrice=?,otherInformationy=? from property where propotyId =?; ";
@@ -50,8 +50,8 @@ public class propertyDao {
         }
     }
 
-    public User selectProperty(int id) {
-        User user = null;
+    public propety selectProperty(int id) {
+       propety user = null;
         // Step 1: Establishing a Connection
         try ( Connection connection = createConnection(); // Step 2:Create a statement using connection object
                   PreparedStatement preparedStatement = connection.prepareStatement(SELECT_PROPERTY_BY_ID);) {
@@ -72,7 +72,7 @@ public class propertyDao {
                 String propertyPrice = rs.getString("propPrice");
                 String OtherInformation = rs.getString("otherInformation");
 
-                user = (User) new propety(id, username, name, propertyImage, propertyType, propertyLocation, contact, propertyPrice, OtherInformation);
+                user = new propety(id, username, name, propertyImage, propertyType, propertyLocation, contact, propertyPrice, OtherInformation);
             System.out.println(user);
             }
         } catch (SQLException e) {
