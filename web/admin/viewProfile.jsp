@@ -7,6 +7,7 @@
         <title>ORES</title>
     </head>
     <body>
+         <%@include file="header.jsp" %>
         <div class="container" style="margin-top: 30px;margin-left: 50px; padding: 10px;">
             <div class="row" style="margin-top: 30px; margin-left: 150px;padding: 10px;">
                 <div class="col-sm-12">

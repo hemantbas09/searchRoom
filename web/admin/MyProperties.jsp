@@ -9,10 +9,15 @@
         <link rel="stylesheet" href="css/common.css">
     </head>
     <body>
-        <%@include file="../common/header.jsp" %>
+        
+         <%
+            String currentUsername = (String) session.getAttribute("currentUser");%>
+            <h1>${currentUser}</h1>
+         <%@include file="header.jsp" %>
         <div class="container-fluid">
             <section class="property-section">
-                <h1 style="text-align: center">About Property</h1>
+                
+                <h3 class="indexProperty" ><strong>My Property</strong></h3>
                 <div class="row">
 
                     <table class="table table-bordered" style="font-size: 25px">
@@ -39,10 +44,13 @@
 
 
                             <c:forEach   var="property" items="${listProperty}">
+                               
+                           
+
+                                <c:if test="${ property.username eq  currentUser }">
                              
-
-
                                 <tr>
+                                    
                                     <td>${property.propetyId}</td>
                                     <td>${property.name}</td>
                                     <td>${property.propotyType}</td>
@@ -57,7 +65,7 @@
 
                                                </td>
                                                </tr>
-                                                     
+                                </c:if>         
                                            </c:forEach>
 
 

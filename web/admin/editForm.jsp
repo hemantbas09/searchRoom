@@ -16,51 +16,39 @@
     </head>
     <body style="font-size: 20px">
         
-     
-        <%@include file="../common/header.jsp" %>
+        <%
+            String username = (String) session.getAttribute("currentUser");%>
+         <%@include file="header.jsp" %>
+
         <div class="container-fluid">
             <div class="row">
 
                 <div class="col-sm-12">
-                    <h3 style="text-align: center; font-size: 30px;">Update Property</h3>
+                    <h3 class="indexProperty" ><strong>Edit Property:</strong></h3>
 
-                    <form action="<%= request.getContextPath()%>/update" method="post">
+                    <form style="margin: 3.5rem" action="<%= request.getContextPath()%>/update" method="post">
                         <div class="row">
 
-                            <div class="col-sm-4">
-                                <label for="propertyname">Property Name:</label><br>
-                                <input type="text" id="propertyname" name="propertyname" value="${property.name}"><br>
-                            </div>
-                            
-
-                            <div class="col-sm-2">
-                                <label for="contact">Contact:</label><br>
-                                <input type="text" id="contact" name="contact" value="${property.contact}"><br><br>
-                            </div>
                             <div class="col-sm-2">
                                 <label for="propertyId">ID:</label><br>
                                 <input type="text" id="propertyId" name="propertyId" value="${property.propetyId}"><br><br>
                             </div>
-                            <!--<!-- 
+
+                            <div class="col-sm-4 ">
+                                <label for="propertyname">Property Name:</label><br>
+                                <input  class=" border border-dark" type="text" id="propertyname" name="propertyname" placeholder="Enter Your Property Name" required value="${property.name}"><br>
+                            </div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <div class="col-sm-2">
-                                <label for="file">Select images</label>
-                                <input class="upload-box" type="file"  name="file">
+                                <label for="contact">Contact:</label><br>
+                                <input class=" border border-dark" type="text" id="contact" name="contact" placeholder="Enter Your Contact Number" required value="${property.contact}"><br><br>
                             </div>
-                            comment -->
+                            &nbsp;&nbsp;&nbsp;
 
                             <div class="col-sm-4">
-                                <label>Price</label>
-                                <input value="${property.propotyPrice}" style="font-size: 20px" type="text" name="price" class="form-control" required="">
-                            </div>
-                            <div class="col-sm-4">
-                                <label>Address</label>
-                                <input value="${property. propotyLocation}" style="font-size: 20px" class="form-control" type="text" name="address"  required="" >
-                            </div>
-
-                            <div class="col-sm-4">
-                                <label for="ptype" > Property Type</label><br>
-                                <select name="ptype"  >
-                                    <option>${property.propotyType}</option>
+                                <label for="ptype"> Property Type:</label><br>
+                                <select name="ptype"  required="">
+                                    <option value=" ">${property.propotyType}</option>
                                     <option value="Room">Room</option>
                                     <option value="Flat">Flat</option>
                                     <option value="House">House</option>
@@ -68,25 +56,48 @@
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
+                            
+
+                            <div class="col-sm-2">
+                                <label for="file">Select images:</label>
+                                <input class="upload-box" type="file"  name="file" multiple>
+                            </div>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+                            <div class="col-sm-4">
+                                <label>Price:</label>
+                                <input  value="${property.propotyPrice}" style="font-size: 20px" type="text" name="price" class="form-control" required  placeholder="Enter Price of the Property" >
+                            </div>
+                           &nbsp;&nbsp;&nbsp;
+                            <div class="col-sm-4">
+                                <label>Address:</label>
+                                <input value="${property. propotyLocation}"  style="font-size: 20px" class="form-control" type="text" name="address"  required placeholder="Enter the Location Of the Property">
+                            </div>
+
+
+
+
+
+
                             <div class="row">
-                                <h3 style="text-align: center; font-size: 30px;">Other Property Information</h3>
+                                <h3 class="indexProperty" ><strong>Other Property Information:</strong></h3>
                                 <div class="col-sm-12">
 
-                                    <textarea  name="otherDetails" style="font-size: 20px" class="form-control"  rows="10">${property.otherInformation}</textarea>
+                                    <textarea  name="otherDetails" style="font-size: 20px" class="form-control"  rows="10" placeholder="Please Enter allthe information of the Property and Other needed requirement  ">${property.otherInformation}</textarea>
 
                                 </div
-                            </div>
-                                    <div class="col-sm-6">
-                               
-                              
-                                 <input class="btn btn-success" type="submit" value="Update">          
-                               
-                         
+                            </div
+
+                            <div class="col-sm-6">
+                                <input class="btn btn-success" style="margin-left: 150px; margin-top: 4rem; width: 200px; padding: 12px;" type="submit" value="Update">
                             </div>
                     </form>
-
-                            
                 </div>
+
+
+
                 <%@include file="../common/footer.jsp" %>
                 </body>
 
