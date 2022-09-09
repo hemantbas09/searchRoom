@@ -2,6 +2,7 @@ package dao;
 
 import static config.dbConnection.createConnection;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,7 +19,7 @@ public class propertyDao {
     private static final String INSERT_PROPERTY_SQL = "INSERT INTO property" + "  (username,propImage, propHeading, PropType, propLocation,Contact,propPrice,otherInformation) VALUES "
             + " (?,?,?,?,?,?,?,?);";
 
-    private static final String SELECT_PROPERTY_BY_ID = "select propotyId,username, propImage, propHeading, PropType, propLocation,Contact,propPrice,otherInformation from property where propotyId =?";
+    private static final String SELECT_PROPERTY_BY_ID = "select propotyId,username, propImage, propHeading, PropType, propLocation,Contact,propPrice,otherInformation,postDate from property where propotyId =?";
     private static final String SELECT_ALL_PROPERTY = "select * from property";
     private static final String DELETE_PROPERTY_SQL = "delete from property where propotyId = ?;";
     private static final String UPDATE_PROPERTY_SQL = "update property set propHeading=?,PropType=?,propLocation=?,Contact=?,propPrice=?,otherInformation=? where propotyId =?; ";
@@ -72,8 +73,9 @@ public class propertyDao {
                 String contact = rs.getString("Contact");
                 String propertyPrice = rs.getString("propPrice");
                 String OtherInformation = rs.getString("otherInformation");
+                Date postDate = rs.getDate("postDate");
 
-                user = new propety(id, username, name, propertyImage, propertyType, propertyLocation, contact, propertyPrice, OtherInformation);
+                user = new propety(id, username, name, propertyImage, propertyType, propertyLocation, contact, propertyPrice, OtherInformation,postDate);
             System.out.println(user);
             }
         } catch (SQLException e) {
@@ -104,8 +106,9 @@ public class propertyDao {
                 String propertyLocation = rs.getString("propLocation");
                 String contact = rs.getString("Contact");
                 String propertyPrice = rs.getString("propPrice");
-                String OtherInformation = rs.getString("otherInformation");
-                users.add( new propety(id,username,name,propertyImage, propertyType,  propertyLocation, contact,propertyPrice, OtherInformation));
+                String OtherInformation = rs.getString("otherInformation"); 
+                Date postDate = rs.getDate("postDate");
+                users.add( new propety(id,username,name,propertyImage, propertyType,  propertyLocation, contact,propertyPrice, OtherInformation, postDate));
             
             }
         } catch (SQLException e) {

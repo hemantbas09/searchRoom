@@ -21,6 +21,7 @@ public class propety {
     private String contact;
     private String propotyPrice;
     private String otherInformation;
+    private Date date;
 
     public propety(String propertyName, String propertyType, String propertyAddress, String contact1, String propertyPrice, String propertyOtherDetails, int id) {
 
@@ -57,7 +58,7 @@ public class propety {
         this.otherInformation = otherInformation;
     }
 
-    public propety(int propetyId, String username, String name, String propotyImage, String propotyType, String propotyLocation, String contact, String propotyPrice, String otherInformation) {
+    public propety(int propetyId, String username, String name, String propotyImage, String propotyType, String propotyLocation, String contact, String propotyPrice, String otherInformation, Date postDate) {
         this.propetyId = propetyId;
         this.username = username;
         this.name = name;
@@ -67,6 +68,7 @@ public class propety {
         this.contact = contact;
         this.propotyPrice = propotyPrice;
         this.otherInformation = otherInformation;
+        this.date =postDate;
     }
 
     public propety(String id, String name, String propertyType, String propertyPrice, String propertyLocation, String contact) {
@@ -144,5 +146,14 @@ public class propety {
     public void setOtherInformation(String otherInformation) {
         this.otherInformation = otherInformation;
     }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+    
 
 }

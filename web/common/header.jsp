@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-light header">
     <div class="container-fluid">
 
-        <a class="navbar-brand logo" href="${pageContext.request.contextPath}/index.jsp">
+        <a class="navbar-brand logo" href="<%= request.getContextPath()%>/commonIndexServalet">
             <i class="fa-solid fa-house"></i>
             <span>Room</span>Finder
         </a>

@@ -1,6 +1,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,18 +11,18 @@
 
     </head>
     <body>
-        
-        
-       
+
+
+
         <%@include file="common/header.jsp" %>
         <section class="home">
-            
+
             <div class="content">
                 <h3>Find Perfect Home to live with your family</h3>
                 <p>Whether you’re looking for  property for rent, <span style="color: red">RoomFinder</span> We will help you find your dream house in just a few seconds.
 
-We offer our clients a wealth of knowledge regarding all aspects of property Rent. Whether it is helping you search for your dream home.We would love the opportunity to help.</p>
-                <a href="allProperty.jsp" class="btn">Find Property</a>
+                    We offer our clients a wealth of knowledge regarding all aspects of property Rent. Whether it is helping you search for your dream home.We would love the opportunity to help.</p>
+                <a href="<%= request.getContextPath()%>/tenentProperty" class="btn">Find Property</a>
             </div>
 
             <div class="image">
@@ -30,17 +30,37 @@ We offer our clients a wealth of knowledge regarding all aspects of property Ren
             </div>
 
         </section>
+            
+            
+            <section class="course">
+            <c:forEach   var="property" items="${listProperty}">
+                <div class="box">
+                    <span class="amount">Rs.${property.propotyPrice}/Month</span>
+                    <img src="${pageContext.request.contextPath}/Static/Image/property1.jpg" alt="" />
+                    <div class="stars">
+                        <h3> ${property.name}</h3>
+                        <h3 class="propertyType">${property.propotyType}</h3>
+                        <h2><i style="color:orange;margin-right: 2.5rem;font-size: 25px;" class="fa-solid fa-location-dot"></i>${property.propotyLocation}</h2>
+                    </div>
 
-        <h3 class="indexProperty" ><strong>All Property</strong></h3>
-        <section class="course">
-            <%@include file="common/card.jsp" %> 
-            <%@include file="common/card.jsp" %> 
-            <%@include file="common/card.jsp" %> 
-            <%@include file="common/card.jsp" %> 
-            <%@include file="common/card.jsp" %> 
-            <%@include file="common/card.jsp" %> <%@include file="common/card.jsp" %> <%@include file="common/card.jsp" %> 
+                    <div class="d-flex justify-content-between">
 
+                        <a href= "${pageContext.request.contextPath}/authentication/authentication.jsp" class=" btn "  href="#">Message</a>
+                        <a href="${pageContext.request.contextPath}/authentication/authentication.jsp" class="btn ">More Details</a>
+                    </div>
+                    <div class="icons">
+                        
+                        <p><i class="fa-solid fa-circle-user"></i> ${property.username}</p>
+                        
+                        <p><i class="far fa-clock"></i> ${property.date}</p>
+
+                    </div>
+                </div>
+
+            </c:forEach>
+            
         </section>
+
 
 
         <section class="footer">

@@ -42,7 +42,7 @@
                     <a class="nav-link " href="${pageContext.request.contextPath}/user/aboutus.jsp">About Us</a>
                 </li>
             </ul>
-
+              <a class="nav-link nav-item nav1 " href=""><i class="fa-solid fa-circle-user"></i>Hemant Basnet</a>
             <a class="nav-link nav-item nav1 " href="<%= request.getContextPath()%>/logoutServalet">Logout</a>
 
         </div>
