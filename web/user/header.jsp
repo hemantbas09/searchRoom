@@ -7,7 +7,7 @@
 <nav class="navbar navbar-expand-lg bg-light header">
     <div class="container-fluid">
 
-        <a class="navbar-brand logo" href="${pageContext.request.contextPath}/index.jsp">
+        <a class="navbar-brand logo" href="${pageContext.request.contextPath}/user/index.jsp">
             <i class="fa-solid fa-house"></i>
             <span>Room</span>Finder
         </a>
@@ -25,12 +25,12 @@
                 </li>
 
                 <li class="nav-item nav1 nav2" >
-                    <a class="nav-link " href="${pageContext.request.contextPath}/index.jsp">Home</a>
+                    <a class="nav-link " href="${pageContext.request.contextPath}/user/index.jsp">Home</a>
                 </li>
 
 
-
-
+                
+                
 
 
 
@@ -46,10 +46,10 @@
                     </ul>
                 </li>
                 <li class="nav-item nav1 nav2">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/authentication/authentication.jsp">Post</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/user/post.jsp">Post</a>
                 </li>
                 <li class="nav-item nav1 nav2">
-                    <a class="nav-link " href="${pageContext.request.contextPath}/user/aboutus.jsp">About Us</a>
+                    <a class="nav-link " href="${pageContext.request.contextPath}/user/logaboutus.jsp">About Us</a>
                 </li>
             </ul>
 

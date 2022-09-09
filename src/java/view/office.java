@@ -46,7 +46,7 @@ public class office extends HttpServlet {
             List<propety> listProperty = propertyDao.selectAllProperty();
             request.setAttribute("listProperty", listProperty);
             
-            RequestDispatcher dispatcher = request.getRequestDispatcher("common/card.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("user/office.jsp");
             dispatcher.forward(request, response);
             System.out.print(" k bay k:" + listProperty);
         }

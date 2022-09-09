@@ -19,11 +19,11 @@ import model.propety;
  *
  * @author hemant61
  */
-public class room extends HttpServlet {
+public class moreDetails extends HttpServlet {
 
     private propertyDao propertyDao;
 
-    public room() {
+    public moreDetails() {
 
         this.propertyDao = new propertyDao();
 
@@ -46,7 +46,7 @@ public class room extends HttpServlet {
             List<propety> listProperty = propertyDao.selectAllProperty();
             request.setAttribute("listProperty", listProperty);
             
-            RequestDispatcher dispatcher = request.getRequestDispatcher("user/room.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("user/propertyDetails.jsp");
             dispatcher.forward(request, response);
             System.out.print(" k bay k:" + listProperty);
         }

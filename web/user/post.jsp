@@ -14,7 +14,7 @@
         <link href="../Static/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-       <%@include file="../common/header.jsp" %>
+       <%@include file="header.jsp" %>
         
         <div class="container-fluid">
             

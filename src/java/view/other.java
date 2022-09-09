@@ -46,7 +46,7 @@ public class other extends HttpServlet {
             List<propety> listProperty = propertyDao.selectAllProperty();
             request.setAttribute("listProperty", listProperty);
             
-            RequestDispatcher dispatcher = request.getRequestDispatcher("common/card.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("user/other.jsp");
             dispatcher.forward(request, response);
             System.out.print(" k bay k:" + listProperty);
         }

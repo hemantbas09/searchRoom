@@ -12,7 +12,7 @@
     </head>
 
     <body>
-        <%@include file="../common/header.jsp" %>
+        <%@include file="header.jsp" %>
         <div class="container-fluid">
             <form method="post" action="../PropertySearch_controller">
                 <div class="row">

@@ -56,6 +56,10 @@
         <servlet-name>other</servlet-name>
         <servlet-class>view.other</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>moreDetails</servlet-name>
+        <servlet-class>view.moreDetails</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerServalet</servlet-name>
         <url-pattern>/registerServalet</url-pattern>
@@ -115,6 +119,10 @@
     <servlet-mapping>
         <servlet-name>other</servlet-name>
         <url-pattern>/other</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>moreDetails</servlet-name>
+        <url-pattern>/moreDetails</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

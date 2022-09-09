@@ -38,7 +38,7 @@
             String upassword = (String) session.getAttribute("currentPassword");
             String role = (String) session.getAttribute("role");
             if (username != null && role=="Tenant" ) {
-                response.sendRedirect("/roomRent/admin/dashBoard.jsp");
+                response.sendRedirect("/roomRent/admin/index.jsp");
                   
             } else if( username != null && role=="Owner"){
             response.sendRedirect("/roomRent/user/index.jsp");
