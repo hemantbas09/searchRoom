@@ -17,11 +17,11 @@
     <body>
         <%@include file="header.jsp" %>
 
-    <c:forEach   var="p" items="${listProperty}">
-
-        <h1> ${listProperty} Property Details ${p.propetyId} </h1>
-         <h1> ${listProperty} Property Details ${p.propetyId} </h1>
-          <h1> ${listProperty} Property Details ${p.propetyId} </h1>
+  
+            <h1> ${listProperty}</h1>
+        
+       
+       
 
     </c:forEach>
 
@@ -63,39 +63,39 @@
             <div>
                 <h2> <strong>Owner Name:</strong></h2>
                 <br>
-                <h3>${property.propotyPrice}</h3>
+                <h3>${property.username}</h3>
             </div>
             <br><br><br>
             <div>
                 <h2> <strong>Property Name:</strong></h2>
                 <br>
-                <h3>Two Room</h3>
+                <h3>${property.name}</h3>
             </div>
             <br><br><br>
             <div><h2><strong>Contact:</strong></h2>
                 <br>
-                <h3>Two Room</h3>
+                <h3>${property.Contact}</h3>
             </div>
             <br><br><br>
             <div><h2><strong>Location:</strong></h2>
                 <br>
-                <h3>Two Room</h3>
+                <h3>${property.propotyLocation}</h3>
             </div>
             <br><br><br>
             <div><h2><strong> Property Type:</strong></h2>
                 <br>
-                <h3>Two Room</h3>
+                <h3> ${property.propotyType}</h3>
             </div>
             <br><br><br>
             <div><h2><strong>Price:</strong></h2>
                 <br>
-                <h3>Two Room</h3>
+                <h3>Rs.${property.propotyPrice}/Month</h3>
 
             </div>
             <br><br><br>
             <div><h2><strong>Other Property Information:</strong></h2>
                 <br>
-                <p style="font-size: 2rem">Two Room</p>
+                <p style="font-size: 2rem"></p>
 
             </div>
 

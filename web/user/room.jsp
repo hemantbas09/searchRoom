@@ -24,10 +24,10 @@
             
             <c:forEach   var="property" items="${listProperty}">
 
-
+          
 
                 <c:if test="${ property.propotyType eq  'Room' }">
-
+      
               <div class="box">
                     <span class="amount">Rs.${property.propotyPrice}/Month</span>
                     <img src="${pageContext.request.contextPath}/Static/Image/property1.jpg" alt="" />
