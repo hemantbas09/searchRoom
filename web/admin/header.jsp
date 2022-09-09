@@ -4,6 +4,14 @@
     Author     : hemant61
 --%>
 
+
+<%
+    String ausername = (String) session.getAttribute("currentUser");
+    String apassword = (String) session.getAttribute("currentPassword");
+    String arole = (String) session.getAttribute("role");
+%>
+
+
 <nav class="navbar navbar-expand-lg bg-light header">
     <div class="container-fluid">
 
@@ -29,29 +37,19 @@
                 <li class="nav-item nav1 nav2">
                     <a class="nav-link " href="${pageContext.request.contextPath}/admin/postproperty.jsp">Post Property</a>
                 </li>
-
-
-
-
-
-
                 <li class="nav-item nav1 nav2">
                     <a class="nav-link" href="<%= request.getContextPath()%>/list">MyProperties</a>
                 </li>
+              
                 <li class="nav-item nav1 nav2">
-                    <a class="nav-link " href="${pageContext.request.contextPath}/user/aboutus.jsp">About Us</a>
+                    <a class="nav-link " href="${pageContext.request.contextPath}/admin/aboutus.jsp">About Us</a>
                 </li>
             </ul>
-              <a class="nav-link nav-item nav1 " href=""><i class="fa-solid fa-circle-user"></i>Hemant Basnet</a>
+                    <a style="margin-right: 2.5rem" class="nav-link nav-item nav1 " href=""><i class="fa-solid fa-circle-user"></i><%= ausername %></a>
             <a class="nav-link nav-item nav1 " href="<%= request.getContextPath()%>/logoutServalet">Logout</a>
 
         </div>
 
     </div>
 </nav>
-
-
-
-
-
 

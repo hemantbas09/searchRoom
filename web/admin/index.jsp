@@ -18,11 +18,11 @@
     <body>
         <%
             String username = (String) session.getAttribute("currentUser");
-                        String password = (String) session.getAttribute("currentPassword");
-                        String role = (String) session.getAttribute("role");
+            String password = (String) session.getAttribute("currentPassword");
+            String role = (String) session.getAttribute("role");
             if (username == null) {
                 response.sendRedirect("/roomRent/index.jsp");
-            } 
+            }
         %>
         <%@include file="header.jsp" %>
         <section class="home">
@@ -30,19 +30,19 @@
             <div class="content">
                 <h3>Give Your Room In Rent To The Best Tenent</h3>
                 <p>Add Room in this platform and find <br> the tenet in the short time peroid.</p>
-                <a href="" class="btn">Find Property</a>
+                <a href="${pageContext.request.contextPath}/admin/postproperty.jsp" class="btn">Add Property</a>
             </div>
 
             <div class="image">
                 <img src="${pageContext.request.contextPath}/Static/Image/home.svg" alt="">
             </div>
         </section>
-        
+
 
         <section class="footer">
             <div class="img1">
                 <img src="../Static/Image/adminBanner.jpg" alt=""/>
-                
+
             </div>
         </section> 
 

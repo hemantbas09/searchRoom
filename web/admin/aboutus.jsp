@@ -1,5 +1,11 @@
 <%-- 
     Document   : aboutus
+    Created on : Sep 9, 2022, 1:48:14 PM
+    Author     : hemant61
+--%>
+
+<%-- 
+    Document   : aboutus
     Created on : Aug 27, 2022, 11:41:21 PM
     Author     : hemant61
 --%>
@@ -17,8 +23,8 @@
     </head>
     <body>
         
-
-        <%@include file="../common/header.jsp" %>
+        
+        <%@include file="header.jsp" %>
 
         <section id="about" class="section-padding about-section">
             <div  class="container">
@@ -52,3 +58,4 @@
     </body>
 
 </html>
+

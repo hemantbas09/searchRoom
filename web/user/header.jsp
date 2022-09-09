@@ -39,10 +39,10 @@
                         Property
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/user/room.jsp">Room</a></li>
-                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/user/flat.jsp">Flat</a></li>
-                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/user/office.jsp">Office</a></li>
-                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/authentication/resetPassword.jsp">Other</a></li>
+                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/room">Room</a></li>
+                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/flat">Flat</a></li>
+                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/office">Office</a></li>
+                        <li><a class="dropdown-item nav1" href="${pageContext.request.contextPath}/other">Other</a></li>
                     </ul>
                 </li>
                 <li class="nav-item nav1 nav2">

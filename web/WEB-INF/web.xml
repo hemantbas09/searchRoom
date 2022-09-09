@@ -40,6 +40,22 @@
         <servlet-name>commonIndexServalet</servlet-name>
         <servlet-class>view.commonIndexServalet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>room</servlet-name>
+        <servlet-class>view.room</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>flat</servlet-name>
+        <servlet-class>view.flat</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>office</servlet-name>
+        <servlet-class>view.office</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>other</servlet-name>
+        <servlet-class>view.other</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerServalet</servlet-name>
         <url-pattern>/registerServalet</url-pattern>
@@ -83,6 +99,22 @@
     <servlet-mapping>
         <servlet-name>commonIndexServalet</servlet-name>
         <url-pattern>/commonIndexServalet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>room</servlet-name>
+        <url-pattern>/room</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>flat</servlet-name>
+        <url-pattern>/flat</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>office</servlet-name>
+        <url-pattern>/office</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>other</servlet-name>
+        <url-pattern>/other</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
