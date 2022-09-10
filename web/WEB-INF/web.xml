@@ -60,6 +60,18 @@
         <servlet-name>moreDetails</servlet-name>
         <servlet-class>view.moreDetails</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>postServalet</servlet-name>
+        <servlet-class>view.postServalet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>profileServalet</servlet-name>
+        <servlet-class>view.profileServalet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>searchServalet</servlet-name>
+        <servlet-class>view.searchServalet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerServalet</servlet-name>
         <url-pattern>/registerServalet</url-pattern>
@@ -123,6 +135,20 @@
     <servlet-mapping>
         <servlet-name>moreDetails</servlet-name>
         <url-pattern>/moreDetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>postServalet</servlet-name>
+        <url-pattern>/postServalet</url-pattern>
+        <url-pattern>/insertPost</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>profileServalet</servlet-name>
+        <url-pattern>/profileServalet</url-pattern>
+        <url-pattern>/insertProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>searchServalet</servlet-name>
+        <url-pattern>/searchServalet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

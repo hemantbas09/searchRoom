@@ -3,7 +3,7 @@
     Created on : Aug 27, 2022, 11:41:01 PM
     Author     : hemant61
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,16 +15,19 @@
     </head>
     <body>
        <%@include file="header.jsp" %>
+       <%
+            String username = (String) session.getAttribute("currentUser");%>
         
         <div class="container-fluid">
             
-                    <form method="POST" action="property_insert_controller" enctype="multipart/form-data">
+                    <form method="POST" action="<%= request.getContextPath()%>/insertPost" >
                        
                         <div class="row">
                             <h3 style="text-align: center; font-size: 30px;">Post </h3>
+                            <input type="hidden" name="currentUser" value="<%= username %>">
                             <div class="col-sm-12">
                                 <br>
-                                <textarea style="font-size: 20px" class="form-control" id="details" rows="10" placeholder="Please inform the "></textarea>
+                                <textarea name="post" style="font-size: 20px" class="form-control" id="details" rows="10" placeholder="Please inform the "></textarea>
                                 
                             </div>
                         </div>
@@ -41,6 +44,17 @@
 
         </form>
     </div>
+                            
+                            <div>
+                                
+                                
+                                <c:forEach   var="post" items="${listPost}">
+                                
+                                    <h1>${post.username}</h1>
+                                    <h1>${post.post}</h1>
+                                    <h1>${post.date}</h1>
+                                </c:forEach>
+                            </div>
         
     <%@include file="../common/footer.jsp" %>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>

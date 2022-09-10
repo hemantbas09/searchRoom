@@ -21,7 +21,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
 
                 <li class="nav-item nav1 nav2">
-                    <a class="nav-link " href="${pageContext.request.contextPath}/user/search.jsp">Search</a>
+                    <a class="nav-link " href="<%= request.getContextPath()%>/searchServalet">Search</a>
                 </li>
 
                 <li class="nav-item nav1 nav2" >
@@ -46,7 +46,7 @@
                     </ul>
                 </li>
                 <li class="nav-item nav1 nav2">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/user/post.jsp">Post</a>
+                    <a class="nav-link" href="<%= request.getContextPath()%>/postServalet">Post</a>
                 </li>
                 <li class="nav-item nav1 nav2">
                     <a class="nav-link " href="${pageContext.request.contextPath}/user/logaboutus.jsp">About Us</a>

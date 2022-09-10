@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Details</title>
         <%@include file="../common/cdn.jsp" %>
         <link href="../Static/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
@@ -17,13 +17,14 @@
     <body>
         <%@include file="header.jsp" %>
 
-  
-            <h1> ${listProperty}</h1>
         
-       
+         
+    <h1> ht ${listProperty.propotyType}</h1>
+    
+  
        
 
-    </c:forEach>
+    
 
     <!-- Gallery -->
     <div class="row">
@@ -61,6 +62,7 @@
 
 
             <div>
+                
                 <h2> <strong>Owner Name:</strong></h2>
                 <br>
                 <h3>${property.username}</h3>
@@ -69,6 +71,7 @@
             <div>
                 <h2> <strong>Property Name:</strong></h2>
                 <br>
+                ${listProperty}
                 <h3>${property.name}</h3>
             </div>
             <br><br><br>

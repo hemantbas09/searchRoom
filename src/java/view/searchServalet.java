@@ -19,11 +19,11 @@ import model.propety;
  *
  * @author hemant61
  */
-public class moreDetails extends HttpServlet {
+public class searchServalet extends HttpServlet {
 
     private propertyDao propertyDao;
 
-    public moreDetails() {
+    public searchServalet() {
 
         this.propertyDao = new propertyDao();
 
@@ -40,19 +40,24 @@ public class moreDetails extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        String type = request.getParameter("ptype");
+        String price = request.getParameter("price");
+        String location = request.getParameter("location");
+        request.setAttribute("type", type);
+        request.setAttribute("price", price);
+        request.setAttribute("location", location);
+        System.out.println(type);
+        System.out.println(price);
+        System.out.println(location);
         try ( PrintWriter out = response.getWriter()) {
-
             /* TODO output your page here. You may use following sample code. */
-            int id=Integer.parseInt(request.getParameter("propertyId"));
-            propety listProperty = propertyDao.selectProperty(id);
+
+            List<propety> listProperty = propertyDao.selectAllProperty();
+            System.out.print(" Chal bey Thank You:" + listProperty);
             request.setAttribute("listProperty", listProperty);
-            
-            RequestDispatcher dispatcher = request.getRequestDispatcher("user/propertyDetails.jsp");
+            /*response.sendRedirect("admin/MyProperties.jsp");*/
+            RequestDispatcher dispatcher = request.getRequestDispatcher("user/search.jsp");
             dispatcher.forward(request, response);
-            System.out.print(" k bay k:");
-        }
-        catch(Exception e){
-        System.out.print(e);
         }
     }
 
