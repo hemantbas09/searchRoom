@@ -9,6 +9,7 @@ import config.dbConnection;
 import dao.regestrationDao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
@@ -44,7 +45,9 @@ public class registerServalet extends HttpServlet {
             String name = request.getParameter("name");
 
             String username = request.getParameter("username");
-
+            
+            
+            
             String email = request.getParameter("email");
 
             String password = request.getParameter("password");

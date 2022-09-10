@@ -72,6 +72,10 @@
         <servlet-name>searchServalet</servlet-name>
         <servlet-class>view.searchServalet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>linkServalet</servlet-name>
+        <servlet-class>view.linkServalet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerServalet</servlet-name>
         <url-pattern>/registerServalet</url-pattern>
@@ -149,6 +153,11 @@
     <servlet-mapping>
         <servlet-name>searchServalet</servlet-name>
         <url-pattern>/searchServalet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>linkServalet</servlet-name>
+        <url-pattern>/linkServalet</url-pattern>
+        <url-pattern>/insertLink</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

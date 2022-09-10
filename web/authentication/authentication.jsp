@@ -175,7 +175,7 @@
                             {
                                 swal("Successfully Signup redirect to the home page")
                                         .then((value) => {
-                                            window.location = "${pageContext.request.contextPath}/index.jsp";
+                                            window.location = "${pageContext.request.contextPath}/common/link.jsp";
                                         });
 
                             } else {
