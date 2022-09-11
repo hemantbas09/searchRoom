@@ -11,6 +11,7 @@
     </head>
     <body>
         <%--<%@include file="admin/common/header.jsp" %>--%>
+        
         <div class="container">
             <div class="row" style="padding-top: 20px;">
                 <div class="col-sm-3">&nbsp;</div>
@@ -23,11 +24,13 @@
                     </div><br><br>
                     <div class="row">
                         <div class="col-sm-12">
+                            <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Username:</h3><h3 style="text-transform: uppercase; font-size: 20px; display: inline; margin-left: 135px;"></h3><br><br>
                             <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Name:</h3><h3 style="text-transform: uppercase; font-size: 20px; display: inline; margin-left: 125px;"></h3><br><br>
                             <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Email:</h3><h3 style=" font-size: 20px; display: inline; margin-left: 125px;"></h3><br><br>
                             <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Contact:</h3><h3 style=" font-size: 20px; display: inline; margin-left: 105px;"></h3><br><br>
-                            <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Role:</h3><h3 style="text-transform: uppercase; font-size: 20px; display: inline; margin-left: 135px;"></h3><br><br>
-                        </div>
+                            
+                            <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Address:</h3><h3 style="text-transform: uppercase; font-size: 20px; display: inline; margin-left: 135px;"></h3><br><br>
+             
                        
                     </div>
                     <div class="row" style="padding-top: 25px;">

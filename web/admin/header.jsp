@@ -45,7 +45,7 @@
                     <a class="nav-link " href="${pageContext.request.contextPath}/admin/aboutus.jsp">About Us</a>
                 </li>
             </ul>
-                    <a style="margin-right: 2.5rem" class="nav-link nav-item nav1 " href=""><i class="fa-solid fa-circle-user"></i><%= ausername %></a>
+                    <a style="margin-right: 2.5rem" class="nav-link nav-item nav1 " href="${pageContext.request.contextPath}/insertProfile"><i class="fa-solid fa-circle-user"></i><%= ausername %></a>
             <a class="nav-link nav-item nav1 " href="<%= request.getContextPath()%>/logoutServalet">Logout</a>
 
         </div>
