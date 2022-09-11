@@ -11,12 +11,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.annotation.MultipartConfig;
 import model.link;
 
 /**
  *
  * @author hemant61
  */
+@MultipartConfig
 public class linkDao {
     
     
@@ -29,7 +31,8 @@ public class linkDao {
     }
 
 //    Inser User:
-    public void insertLink(link link) throws SQLException {
+    public boolean insertLink(link link) throws SQLException {
+        boolean f=false;
         System.out.println(INSERT_PROPERTY_SQL);
         // try-with-resource statement will auto close the connection.
         try ( Connection connection = createConnection();  PreparedStatement preparedStatement = connection.prepareStatement(INSERT_PROPERTY_SQL)) {
@@ -39,11 +42,12 @@ public class linkDao {
             preparedStatement.setString(2, link.getLink());
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
+            f=true;
+           
         } catch (SQLException e) {
             printSQLException(e);
-            System.out.println("Nepal");
-
         }
+        return f;
     }
 
     public link selectLink(String username) {

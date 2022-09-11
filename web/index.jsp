@@ -12,7 +12,7 @@
     </head>
     <body>
 
-        <a href="common/profile.jsp">iol</a>
+      
 
         <%@include file="common/header.jsp" %>
         <section class="home">

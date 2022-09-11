@@ -22,7 +22,10 @@
             String role = (String) session.getAttribute("role");
 
         %>
-        <h1><%= username %></h1>
+        
+        
+        <h1> <=% username %></h1>
+        
            
         <%@include file="header.jsp" %>
         <section class="home">

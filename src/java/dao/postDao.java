@@ -67,7 +67,7 @@ public class postDao {
                 String username = rs.getString("username");
                 String post = rs.getString("post"); 
                 Date date = rs.getDate("date");
-                users.add(new post(username,post));
+                users.add(new post(username,post,date));
             
             }
         } catch (SQLException e) {

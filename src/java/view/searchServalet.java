@@ -56,7 +56,7 @@ public class searchServalet extends HttpServlet {
             System.out.print(" Chal bey Thank You:" + listProperty);
             request.setAttribute("listProperty", listProperty);
             /*response.sendRedirect("admin/MyProperties.jsp");*/
-            RequestDispatcher dispatcher = request.getRequestDispatcher("user/search.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("user/searchBox.jsp");
             dispatcher.forward(request, response);
         }
     }

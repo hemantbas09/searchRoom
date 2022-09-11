@@ -158,6 +158,7 @@
                 console.log("loaded........");
 
                 $('#signup').on('submit', function (event) {
+                    
                     event.preventDefault();
                     let form = new FormData(this);
                     $("#submit-btn").hide();

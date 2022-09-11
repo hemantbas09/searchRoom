@@ -19,14 +19,14 @@
 
         
          
-    <h1> ht ${listProperty.propotyType}</h1>
+    
     
   
        
 
     
 
-    <!-- Gallery -->
+    <!-- Gallery--> 
     <div class="row">
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
             <img
@@ -65,38 +65,40 @@
                 
                 <h2> <strong>Owner Name:</strong></h2>
                 <br>
-                <h3>${property.username}</h3>
+                <h3>${listProperty.username}</h3>
             </div>
             <br><br><br>
             <div>
                 <h2> <strong>Property Name:</strong></h2>
                 <br>
-                ${listProperty}
-                <h3>${property.name}</h3>
+               
+                <h3>${listProperty.name}</h3>
             </div>
             <br><br><br>
             <div><h2><strong>Contact:</strong></h2>
                 <br>
-                <h3>${property.Contact}</h3>
+                <h3>${listProperty.contact}</h3>
             </div>
             <br><br><br>
             <div><h2><strong>Location:</strong></h2>
                 <br>
-                <h3>${property.propotyLocation}</h3>
+                <h3>${listProperty.propotyLocation}</h3>
             </div>
             <br><br><br>
             <div><h2><strong> Property Type:</strong></h2>
                 <br>
-                <h3> ${property.propotyType}</h3>
+                <h3> ${listProperty.propotyType}</h3>
             </div>
             <br><br><br>
             <div><h2><strong>Price:</strong></h2>
                 <br>
-                <h3>Rs.${property.propotyPrice}/Month</h3>
+                <h3>Rs.${listProperty.propotyPrice}/Month</h3>
 
             </div>
             <br><br><br>
             <div><h2><strong>Other Property Information:</strong></h2>
+                <h3>${listProperty.otherInformation}</h3>
+                
                 <br>
                 <p style="font-size: 2rem"></p>
 
@@ -105,7 +107,6 @@
         </div>
 
     </div>
-
     <%@include file="../common/footer.jsp" %>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>

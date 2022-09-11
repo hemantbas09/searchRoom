@@ -24,6 +24,10 @@
                 response.sendRedirect("/roomRent/index.jsp");
             }
         %>
+        
+        
+        
+        <h1> <=% username%></h1>
         <%@include file="header.jsp" %>
         <section class="home">
 
