@@ -16,10 +16,10 @@
     <body>
         <%@include file="header.jsp" %>
         <%
-            String username = (String) session.getAttribute("currentUser");
+            String postUsername = (String) session.getAttribute("currentUser");
         
         %>
-        <h1> <=% username %></h1>
+        <h1> <%= postUsername%></h1>
         
         <div class="container-fluid">
 
@@ -27,7 +27,7 @@
 
                 <div class="row">
                     <h3 style="text-align: center; font-size: 30px;">Post </h3>
-                    <input type="hidden" name="currentUser" value="<%= username%>">
+                    <input type="hidden" name="currentUser" value="<%= postUsername%>">
                     <div class="col-sm-12">
                         <br>
                         <textarea name="post" style="font-size: 20px" class="form-control" id="details" rows="10" placeholder="Please inform the "></textarea>

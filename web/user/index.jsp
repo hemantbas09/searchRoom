@@ -17,14 +17,14 @@
     </head>
     <body>
         <%
-            String username = (String) session.getAttribute("currentUser");
-            String upassword = (String) session.getAttribute("currentPassword");
+            String cusername = (String) session.getAttribute("currentUser");
+            String cpassword = (String) session.getAttribute("currentPassword");
             String role = (String) session.getAttribute("role");
 
         %>
         
         
-        <h1> <=% username %></h1>
+        <h1><%= cusername %></h1>
         
            
         <%@include file="header.jsp" %>

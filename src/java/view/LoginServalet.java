@@ -71,7 +71,7 @@ public class LoginServalet extends HttpServlet {
                     ownerSession.setMaxInactiveInterval(15);
                     ownerSession.setAttribute("currentPassword", password);
                     ownerSession.setAttribute("currentUser", userName);
-                     ownerSession.setAttribute("role", userValidate);
+                    ownerSession.setAttribute("role", userValidate);
 
                     response.sendRedirect("/roomRent/admin/index.jsp");
                     break;
