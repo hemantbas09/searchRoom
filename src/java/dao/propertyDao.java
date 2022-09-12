@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.http.Part;
 import model.propety;
 
 /**
@@ -31,7 +32,7 @@ public class propertyDao {
     public void insertProperty(propety Property) throws SQLException {
         System.out.println(INSERT_PROPERTY_SQL);
         // try-with-resource statement will auto close the connection.
-        try ( Connection connection = createConnection();  PreparedStatement preparedStatement = connection.prepareStatement(INSERT_PROPERTY_SQL)) {
+        try ( Connection connection = createConnection();  PreparedStatement preparedStatement = connection.prepareStatement(INSERT_PROPERTY_SQL);) {
             
             
             preparedStatement.setString(1, Property.getUsername());
@@ -44,6 +45,7 @@ public class propertyDao {
             preparedStatement.setString(8, Property.getOtherInformation());
 
             System.out.println(preparedStatement);
+            System.out.println("Nepal");
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             printSQLException(e);
@@ -76,7 +78,7 @@ public class propertyDao {
                 Date postDate = rs.getDate("postDate");
 
                 user = new propety(id, username, name, propertyImage, propertyType, propertyLocation, contact, propertyPrice, OtherInformation,postDate);
-            System.out.println(user);
+            System.out.println("User"+user);
             }
         } catch (SQLException e) {
             printSQLException(e);

@@ -19,7 +19,7 @@
                 <div class="col-sm-12">
                     <h3 class="indexProperty" ><strong>Post Property:</strong></h3>
 
-                    <form style="margin: 3.5rem" action="<%= request.getContextPath()%>/insert" method="post">
+                    <form style="margin: 3.5rem" action="<%= request.getContextPath()%>/insert" method="post" enctype="multipart/form-data" >
                         <div class="row">
 
                             <div class="col-sm-4 ">
@@ -48,7 +48,7 @@
 
                             <div class="col-sm-2">
                                 <label for="file">Select images:</label>
-                                <input class="upload-box" type="file"  name="file" multiple>
+                                <input class="upload-box" type="file"  name="file">
                             </div>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 

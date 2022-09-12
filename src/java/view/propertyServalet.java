@@ -1,19 +1,23 @@
 package view;
 
 import dao.propertyDao;
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Random;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import model.propety;
 
-//@WebServlet("/postproperty")
-@MultipartConfig(maxFileSize = 16177215)
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, //2mb
+        maxFileSize = 1024 * 1024 * 10, //10mb
+        maxRequestSize = 1024 * 1024 * 50)
 public class propertyServalet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -95,21 +99,39 @@ public class propertyServalet extends HttpServlet {
     }
 
     private void insertProperty(HttpServletRequest request, HttpServletResponse response)
-            throws SQLException, IOException {
+            throws SQLException, IOException, IllegalStateException, ServletException {
         String currentUser = request.getParameter("currentUser");
         String contact = request.getParameter("contact");
         String propertyName = request.getParameter("propertyname");
         System.out.println(currentUser);
-        String propertyImage = request.getParameter("file");
         String propertyPrice = request.getParameter("price");
         String propertyType = request.getParameter("ptype");
         String propertyAddress = request.getParameter("address");
         String propertyOtherDetails = request.getParameter("otherDetails");
 
-        propety newProperty = new propety(currentUser, propertyName, propertyImage, propertyType, propertyAddress, contact, propertyPrice, propertyOtherDetails);
-        System.out.println(newProperty);
-        propertyDao.insertProperty(newProperty);
-        response.sendRedirect("admin/MyProperties.jsp");
+        try {
+            String name = "#" + RandGeneratedStr();
+            Part propertyImage = request.getPart("file");
+            
+            System.out.println(propertyImage);
+            String fileName = "Static/Image/property/" + name + ".png";
+            String contextPath = new File("").getAbsolutePath();
+            System.out.println(fileName);
+            System.out.println(contextPath);
+            String imageSavePath = "/home/hemant61/NetBeansProjects/roomRent/web/" + File.separator + fileName;
+            System.out.println(imageSavePath);
+            File fileSaveDir = new File(imageSavePath);
+            System.out.println(fileSaveDir);
+            
+            propertyImage.write(imageSavePath + File.separator);
+            propety newProperty = new propety(currentUser, propertyName, fileName, propertyType, propertyAddress, contact, propertyPrice, propertyOtherDetails);
+            System.out.println("row"+newProperty);
+            propertyDao.insertProperty(newProperty);
+            response.sendRedirect("list");
+        } catch (Exception e) {
+
+            System.out.println("HOme");
+        }
 
     }
 
@@ -118,7 +140,7 @@ public class propertyServalet extends HttpServlet {
 
         try {
             String ids = request.getParameter("propertyId");
-//            String propertyImage = request.getParameter("file");
+            String propertyImage = request.getParameter("file");
             String propertyName = request.getParameter("propertyname");
             String propertyType = request.getParameter("ptype");
             String propertyAddress = request.getParameter("address");
@@ -126,7 +148,7 @@ public class propertyServalet extends HttpServlet {
             String propertyPrice = request.getParameter("price");
             String propertyOtherDetails = request.getParameter("otherDetails");
             int id = Integer.parseInt(ids);
-            propety updateProperty = new propety(propertyName,propertyType,propertyAddress, contact,propertyPrice,propertyOtherDetails,id);
+            propety updateProperty = new propety(propertyName, propertyImage, propertyType, propertyAddress, contact, propertyPrice, propertyOtherDetails, id);
             System.out.println("Why are u Running" + updateProperty.getName());
             System.out.println("Why are u Running" + updateProperty);
             System.out.println("Why are u Running" + contact);
@@ -155,4 +177,13 @@ public class propertyServalet extends HttpServlet {
 
     }
 
+    static String RandGeneratedStr() {
+        char[] chars = "abcdefghijklmnopqrstuvwxyzABSDEFGHIJKLMNOPQRSTUVWXYZ1234567890".toCharArray();
+        Random r = new Random(System.currentTimeMillis());
+        char[] id = new char[8];
+        for (int i = 0; i < 8; i++) {
+            id[i] = chars[r.nextInt(chars.length)];
+        }
+        return new String(id);
+    }
 }
