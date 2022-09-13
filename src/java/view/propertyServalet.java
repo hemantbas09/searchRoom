@@ -110,11 +110,11 @@ public class propertyServalet extends HttpServlet {
         String propertyOtherDetails = request.getParameter("otherDetails");
 
         try {
-            String name = "#" + RandGeneratedStr();
+            String name = "a" + RandGeneratedStr();
             Part propertyImage = request.getPart("file");
             
             System.out.println(propertyImage);
-            String fileName = "Static/Image/property/" + name + ".png";
+            String fileName = "Static/Image/property/" + name + ".jpg";
             String contextPath = new File("").getAbsolutePath();
             System.out.println(fileName);
             System.out.println(contextPath);

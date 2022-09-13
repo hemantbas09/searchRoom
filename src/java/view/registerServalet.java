@@ -72,7 +72,7 @@ public class registerServalet extends HttpServlet {
                             out.println("done");
                         
                         }else{
-                            out.println("User name is Already Taken");
+                            out.println("Username is Already Taken");
                             
                         }
                     } else {

@@ -3,7 +3,7 @@
     Created on : Sep 9, 2022, 3:17:54 PM
     Author     : hemant61
 --%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,100 +17,72 @@
     <body>
         <%@include file="header.jsp" %>
 
-        
-         
-    
-    
-  
-       
-
-    
-
-    <!-- Gallery--> 
-    <div class="row">
-        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-            <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                class="w-100 shadow-1-strong rounded mb-4"
-                alt="Boat on Calm Water"
-                />
-
-            <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
-                class="w-100 shadow-1-strong rounded mb-4"
-                alt="Wintry Mountain Landscape"
-                />
 
 
-        </div>
+        <div class="container p-5  m-auto mt-5 mb-5"  >
+            <div class="row mx-5" style=" display: flex; justify-content: center">
+                <div class="col-sm-10">
+                    <img "
+                         src="${pageContext.request.contextPath}/${listProperty.propotyImage}"
+                         class="w-100 shadow-1-strong rounded mb-4"
+                         alt="Boat on Calm Water"
+                         />
+                </div>
 
-        <div class="col-lg-4 mb-4 mb-lg-0">
-            <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
-                class="w-100 shadow-1-strong rounded mb-4"
-                alt="Mountains in the Clouds"
-                />
+                <hr>
 
-            <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                class="w-100 shadow-1-strong rounded mb-4"
-                alt="Boat on Calm Water"
-                />
-        </div>
-
-        <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="row p-4">
+                    <div class="col-sm">
+                        <h2> <strong>Owner Name:</strong></h2>
+                        <h3>${listProperty.username}</h3>
+                    </div>
+                    <div class="col-sm">
+                        <h2> <strong>Property Name:</strong></h2>
 
 
-            <div>
-                
-                <h2> <strong>Owner Name:</strong></h2>
-                <br>
-                <h3>${listProperty.username}</h3>
-            </div>
-            <br><br><br>
-            <div>
-                <h2> <strong>Property Name:</strong></h2>
-                <br>
-               
-                <h3>${listProperty.name}</h3>
-            </div>
-            <br><br><br>
-            <div><h2><strong>Contact:</strong></h2>
-                <br>
-                <h3>${listProperty.contact}</h3>
-            </div>
-            <br><br><br>
-            <div><h2><strong>Location:</strong></h2>
-                <br>
-                <h3>${listProperty.propotyLocation}</h3>
-            </div>
-            <br><br><br>
-            <div><h2><strong> Property Type:</strong></h2>
-                <br>
-                <h3> ${listProperty.propotyType}</h3>
-            </div>
-            <br><br><br>
-            <div><h2><strong>Price:</strong></h2>
-                <br>
-                <h3>Rs.${listProperty.propotyPrice}/Month</h3>
+                        <h3>${listProperty.name}</h3>
+                    </div>
+                    <div class="col-sm">
+                        <h2><strong>Contact:</strong></h2>
 
-            </div>
-            <br><br><br>
-            <div><h2><strong>Other Property Information:</strong></h2>
-                <h3>${listProperty.otherInformation}</h3>
-                
-                <br>
-                <p style="font-size: 2rem"></p>
+                        <h3>${listProperty.contact}</h3>
+                    </div>
+                    <hr>
+                    <div class="row p-4">
+                        <div class="col-sm">
+                            <h2><strong>Location:</strong></h2>
+                            <br>
+                            <h3>${listProperty.propotyLocation}</h3>
+                        </div>
+                        <div class="col-sm">
+                            <h2><strong> Property Type:</strong></h2>
+
+                            <h3> ${listProperty.propotyType}</h3>
+                        </div>
+                        <div class="col-sm">
+                            <h2><strong>Price:</strong></h2><h2>
+
+                                <h3>Rs.${listProperty.propotyPrice}/Month</h3>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row p-4">
+                    <div class="col-sm-10">
+                        <h2><strong>Other Property Information:</strong></h2>
+                        <h3>${listProperty.otherInformation}</h3>
+
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
+        <%@include file="../common/footer.jsp" %>
 
-    </div>
-    <%@include file="../common/footer.jsp" %>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-
-</body>
+    </body>
 </html>

@@ -43,13 +43,12 @@ public class propertyDao {
             preparedStatement.setString(6, Property.getContact());
             preparedStatement.setString(7, Property.getPropotyPrice());
             preparedStatement.setString(8, Property.getOtherInformation());
-
-            System.out.println(preparedStatement);
-            System.out.println("Nepal");
             preparedStatement.executeUpdate();
+             System.out.println(preparedStatement.executeUpdate());
+             System.out.println("Nepal"+preparedStatement );
         } catch (SQLException e) {
             printSQLException(e);
-            System.out.println("Nepal");
+//            System.out.println("Nepal");
 
         }
     }

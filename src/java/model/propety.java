@@ -5,7 +5,6 @@
 package model;
 
 import java.sql.Date;
-import javax.servlet.http.Part;
 
 /**
  *
@@ -38,10 +37,10 @@ public class propety {
 
     }
 
-    public propety(String username, String name, String propotyImage, String propotyType, String propotyLocation, String contact, String propotyPrice, String otherInformation) {
+    public propety(String username, String name, String fileName, String propotyType, String propotyLocation, String contact, String propotyPrice, String otherInformation) {
         this.username = username;
         this.name = name;
-        this.propotyImage = propotyImage;
+        this.propotyImage = fileName;
         this.propotyType = propotyType;
         this.propotyLocation = propotyLocation;
         this.contact = contact;

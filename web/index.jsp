@@ -28,7 +28,7 @@
             <div class="image">
                 <img src="${pageContext.request.contextPath}/Static/Image/home2.svg" alt="">
             </div>
-
+            
         </section>
             
             
