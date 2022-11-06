@@ -22,8 +22,12 @@
 	border: #dee2e6
 }
 </style>
+<%@include file="../common/cdn.jsp" %> 
+        <link href="../Static/css/style.css" rel="stylesheet" type="text/css"/>
 </head>
+
 <body oncontextmenu='return false' class='snippet-body bg-info'>
+    <%@include file="../common/header.jsp" %>
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
 	<div>
@@ -94,6 +98,7 @@
 			</div>
 		</div>
 	</div>
+         <%@include file="../common/footer.jsp" %>
 	<script type='text/javascript'
 		src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js'></script>
 	

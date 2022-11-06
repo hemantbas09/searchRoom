@@ -21,9 +21,11 @@
 
         <div class="container p-5  m-auto mt-5 mb-5"  >
             <div class="row mx-5" style=" display: flex; justify-content: center">
+                
                 <div class="col-sm-10">
                     <img "
-                         src="${pageContext.request.contextPath}/${listProperty.propotyImage}"
+                        
+                         src="${listProperty.propotyImage}"
                          class="w-100 shadow-1-strong rounded mb-4"
                          alt="Boat on Calm Water"
                          />

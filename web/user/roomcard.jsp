@@ -21,7 +21,7 @@
         
     </p>
     <a  href="#" class="btn cardbtn">More Details</a>
-    <a href="${pageContext.request.contextPath}/authentication/authentication.jsp" class="btn cardbtn">Message</a>
+    
     <div class="icons">
         <p><i class="far fa-clock"></i> 2 days ago</p>
         <p> 3 <i class="fa-solid fa-bed"></i> Room</p>

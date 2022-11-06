@@ -1,5 +1,5 @@
 
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,13 @@
     </head>
     <body>
         <%--<%@include file="admin/common/header.jsp" %>--%>
-        <h1>${listProfile}</h1>
+       <%
+            String username = (String) session.getAttribute("currentUser");
+       %>
+        
+             
+        
+            
         
         <div class="container">
             <div class="row" style="padding-top: 20px;">
@@ -24,12 +30,12 @@
                     </div><br><br>
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Username:</h3><h3 style="text-transform: uppercase; font-size: 20px; display: inline; margin-left: 135px;"></h3><br><br>
-                            <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Name:</h3><h3 style="text-transform: uppercase; font-size: 20px; display: inline; margin-left: 125px;"></h3><br><br>
-                            <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Email:</h3><h3 style=" font-size: 20px; display: inline; margin-left: 125px;"></h3><br><br>
-                            <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Contact:</h3><h3 style=" font-size: 20px; display: inline; margin-left: 105px;"></h3><br><br>
+                            <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Username: <%=  username %></h3><h3 style="text-transform: uppercase; font-size: 20px; display: inline; margin-left: 135px;"></h3><br><br>
+                            <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Name:${listProfile.name}</h3><h3 style="text-transform: uppercase; font-size: 20px; display: inline; margin-left: 125px;"></h3><br><br>
+                            <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Email: ${listProfile.email}</h3><h3 style=" font-size: 20px; display: inline; margin-left: 125px;"></h3><br><br>
+                            <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Contact:${listProfile.contactNumber}</h3><h3 style=" font-size: 20px; display: inline; margin-left: 105px;"></h3><br><br>
                             
-                            <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Address:</h3><h3 style="text-transform: uppercase; font-size: 20px; display: inline; margin-left: 135px;"></h3><br><br>
+                            <h3 style="font-size: 20px; font-weight: bold; display: inline; margin-left: 95px;">Address:${listProfile.address}</h3><h3 style="text-transform: uppercase; font-size: 20px; display: inline; margin-left: 135px;"></h3><br><br>
              
                        
                     </div>

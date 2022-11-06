@@ -38,7 +38,7 @@
 
                     <div class="d-flex justify-content-between">
 
-                        <a href= "${pageContext.request.contextPath}/authentication/authentication.jsp" class=" btn "  href="#">Message</a>
+                        
                         <a href="${pageContext.request.contextPath}/authentication/authentication.jsp" class="btn ">More Details</a>
                     </div>
                     <div class="icons">

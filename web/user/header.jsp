@@ -3,11 +3,15 @@
     Created on : Sep 2, 2022, 9:49:59 PM
     Author     : hemant61
 --%>
-
+<%
+    String ausername = (String) session.getAttribute("currentUser");
+    String apassword = (String) session.getAttribute("currentPassword");
+    String arole = (String) session.getAttribute("role");
+%>
 <nav class="navbar navbar-expand-lg bg-light header">
     <div class="container-fluid">
 
-        <a class="navbar-brand logo" href="${pageContext.request.contextPath}/user/index.jsp">
+        <a class="navbar-brand logo" href="<%= request.getContextPath()%>/upropdetail">
             <i class="fa-solid fa-house"></i>
             <span>Room</span>Finder
         </a>
@@ -17,6 +21,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+            
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
 
@@ -25,14 +30,9 @@
                 </li>
 
                 <li class="nav-item nav1 nav2" >
-                    <a class="nav-link " href="${pageContext.request.contextPath}/user/index.jsp">Home</a>
+                    <a class="nav-link " href="<%= request.getContextPath()%>/upropdetail">Home</a>
                 </li>
-
-
                 
-                
-
-
 
                 <li class="nav-item dropdown nav1 nav2">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,7 +52,7 @@
                     <a class="nav-link " href="${pageContext.request.contextPath}/user/logaboutus.jsp">About Us</a>
                 </li>
             </ul>
-
+            <a style="margin-right: 2.5rem" class="nav-link nav-item nav1 " href="#"><i class="fa-solid fa-circle-user"></i><%= ausername %></a>
             <a class="nav-link nav-item nav1 " href="<%= request.getContextPath()%>/logoutServalet">Logout</a>
            
         </div>

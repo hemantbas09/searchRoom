@@ -6,9 +6,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ORES</title>
         <%@include file="common/cdn.jsp" %>
-        <link rel="stylesheet" href="css/common.css">
+        <%@include file="../common/cdn.jsp" %> 
+        <link href="../Static/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <%@include file="../common/header.jsp" %>
         <form method="post" action="changePassword">
             <div class="container" style="margin-top: 100px;">
                 <div class="row">
@@ -53,5 +55,6 @@
               
             </div>
         </form>
+         <%@include file="../common/footer.jsp" %>
     </body>
 </html>

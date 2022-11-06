@@ -53,15 +53,15 @@
 
                     <img src="../Static/Image/homebanner.jpg" alt="">
                     <div class="text">
-                        <span class="text-1">Every new friend is a <br> new adventure</span>
-                        <span class="text-2">Let's get connected</span>
+                        <span class="text-1">Find New Home:</span>
+                        
                     </div>
                 </div>
                 <div class="back">
                     <img class="bhttp://localhost:8080/roomRent/authentication/authentication.jspackImg" src="../Static/Image/homebanner.jpg" alt="">
                     <div class="text">
-                        <span class="text-1">Complete miles of journey <br> with one step</span>
-                        <span class="text-2">Let's get started</span>
+                        <span class="text-1">Find Dream Place</span>
+                        
                     </div>
                 </div>
             </div>
@@ -176,7 +176,7 @@
                             {
                                 swal("Successfully Signup redirect to the home page")
                                         .then((value) => {
-                                            window.location = "${pageContext.request.contextPath}/common/link.jsp";
+                                            window.location = "${pageContext.request.contextPath}/index.jsp";
                                         });
 
                             } else {

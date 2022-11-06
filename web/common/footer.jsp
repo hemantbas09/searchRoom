@@ -9,11 +9,11 @@
 
         <div class="box" style="text-align: center;">
             <h3 >Social Media</h3>
-            <a href=""><i class="fa-brands fa-facebook">Facebook</i></a>
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook">Facebook</i></a>
             <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram">Instragram</i></a>
-            <a href=""><i class="fa-brands fa-github">Github</i></a>
-            <a href=""><i class="fa-brands fa-linkedin">Linkedin</i></a>
-            <a href=""><i class="fa-brands fa-twitter"></i>Twitter</a>
+            <a href="https://github.com/"><i class="fa-brands fa-github">Github</i></a>
+            <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin">Linkedin</i></a>
+            <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i>Twitter</a>
         </div>
 
     </div>

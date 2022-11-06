@@ -3,7 +3,7 @@
     Created on : Sep 2, 2022, 9:50:42 PM
     Author     : hemant61
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -24,7 +24,7 @@
         %>
         
         
-        <h1><%= cusername %></h1>
+       
         
            
         <%@include file="header.jsp" %>
@@ -44,19 +44,41 @@
 
         <h3 class="indexProperty" ><strong>All Property</strong></h3>
         <section class="course">
-            <%@include file="roomcard.jsp" %> 
-            <%@include file="roomcard.jsp" %> 
-            <%@include file="roomcard.jsp" %> 
-            <%@include file="roomcard.jsp" %> 
-            <%@include file="roomcard.jsp" %> 
-            <%@include file="roomcard.jsp" %>  
+         
+             <c:forEach   var="property" items="${listProperty}">
+                <div class="box">
+                    <span class="amount">Rs.${property.propotyPrice}/Month</span>
+                    <img src="${pageContext.request.contextPath}/Static/Image/property1.jpg" alt="" />
+                    <div class="stars">
+                        <h3> ${property.name}</h3>
+                        <h3 class="propertyType">${property.propotyType}</h3>
+                        <h2><i style="color:orange;margin-right: 2.5rem;font-size: 25px;" class="fa-solid fa-location-dot"></i>${property.propotyLocation}</h2>
+                    </div>
 
+                    <div class="d-flex justify-content-between">
+
+                        
+                        <a href="${pageContext.request.contextPath}/authentication/authentication.jsp" class="btn ">More Details</a>
+                    </div>
+                    <div class="icons">
+                        
+                        <p><i class="fa-solid fa-circle-user"></i> ${property.username}</p>
+                        
+                        <p><i class="far fa-clock"></i> ${property.date}</p>
+
+                    </div>
+                </div>
+
+            </c:forEach>
+           
+           
+            
         </section>
-
-
+           
         <section class="footer">
             <div class="img1">
-                <img src="Static/Image/homebanner.jpg" alt=""/>
+          
+                <img src="../Static/Image/homebanner.jpg" alt=""/>
             </div>
         </section> 
 

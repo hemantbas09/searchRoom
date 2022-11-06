@@ -76,6 +76,10 @@
         <servlet-name>linkServalet</servlet-name>
         <servlet-class>view.linkServalet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>upropdetail</servlet-name>
+        <servlet-class>view.upropdetail</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registerServalet</servlet-name>
         <url-pattern>/registerServalet</url-pattern>
@@ -159,7 +163,10 @@
         <url-pattern>/linkServalet</url-pattern>
         <url-pattern>/insertLink</url-pattern>
     </servlet-mapping>
-  
+    <servlet-mapping>
+        <servlet-name>upropdetail</servlet-name>
+        <url-pattern>/upropdetail</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             10

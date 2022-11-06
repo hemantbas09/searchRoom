@@ -50,7 +50,5 @@
                                 <input class="btn btn-success" style="margin-left: 150px; margin-top: 4rem; width: 200px; padding: 12px;" type="submit" value="Submit">
                             </div>
                     </form>
-        
-        
     </body>
 </html>

@@ -15,7 +15,10 @@
 <link href='' rel='stylesheet'>
 <script type='text/javascript'
 	src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <%@include file="../common/cdn.jsp" %> 
+        <link href="../Static/css/style.css" rel="stylesheet" type="text/css"/>
 <style>
+    
 body {
 	background-position: center;
 	background-color: #eee;
@@ -56,6 +59,7 @@ body {
 }
 </style>
 </head>
+<%@include file="../common/header.jsp" %>
 <body oncontextmenu='return false' class='snippet-body'>
 	<div class="container padding-bottom-3x mb-2 mt-5">
 		<div class="row justify-content-center">
@@ -92,10 +96,12 @@ body {
 			</div>
 		</div>
 	</div>
+                                         <%@include file="../common/footer.jsp" %>
 	<script type='text/javascript'
 		src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js'></script>
 	<script type='text/javascript' src=''></script>
 	<script type='text/javascript' src=''></script>
 	<script type='text/Javascript'></script>
+        
     </body>
 </html>

@@ -17,7 +17,8 @@
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
+<%@include file="../common/cdn.jsp" %> 
+        <link href="../Static/css/style.css" rel="stylesheet" type="text/css"/>
 <style type="text/css">
 .form-gap {
     padding-top: 70px;
@@ -26,6 +27,7 @@
 </head>
 
 <body>
+    <%@include file="../common/header.jsp" %>
 	<div class="form-gap"></div>
 	<div class="container">
 		<div class="row">
@@ -75,5 +77,6 @@
 			</div>
 		</div>
 	</div>
+                   <%@include file="../common/footer.jsp" %>
 </body>
 </html>

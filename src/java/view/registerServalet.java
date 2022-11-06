@@ -82,7 +82,7 @@ public class registerServalet extends HttpServlet {
                     }
                     
                 } else {
-                    out.println("Same Password rakh chutiya");
+                    out.println("Password did not match:");
                 }
                 
 
@@ -109,3 +109,4 @@ public class registerServalet extends HttpServlet {
     }// </editor-fold>
 
 }
+

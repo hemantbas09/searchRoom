@@ -19,7 +19,7 @@
             String postUsername = (String) session.getAttribute("currentUser");
         
         %>
-        <h1> <%= postUsername%></h1>
+    
         
         <div class="container-fluid">
 

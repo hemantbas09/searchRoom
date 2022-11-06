@@ -12,7 +12,7 @@
         
          <%
             String currentUsername = (String) session.getAttribute("currentUser");%>
-            <h1>${currentUser}</h1>
+            
          <%@include file="header.jsp" %>
         <div class="container-fluid">
             <section class="property-section">

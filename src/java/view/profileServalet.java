@@ -73,10 +73,12 @@ public class profileServalet extends HttpServlet {
     private void listProfile(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         String username = request.getParameter("currentUsername");
+        System.out.print("Nepal: jpt" +username);
         profile listProfile = profileDao.selectProfile(username);
         System.out.print(" Chal bey Thank You:" + listProfile);
+        System.out.print(" Chal bey Thank You:");
         request.setAttribute("listProfile", listProfile);
-        /*response.sendRedirect("admin/MyProperties.jsp");*/
+        /*response.sendRedirect("admin/MyProperties.jsp");*/ 
         RequestDispatcher dispatcher = request.getRequestDispatcher("admin/profileView.jsp");
         dispatcher.forward(request, response);
 

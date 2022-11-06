@@ -15,7 +15,7 @@
 <nav class="navbar navbar-expand-lg bg-light header">
     <div class="container-fluid">
 
-        <a class="navbar-brand logo" href="${pageContext.request.contextPath}/index.jsp">
+        <a class="navbar-brand logo" href="${pageContext.request.contextPath}/admin/index.jsp">
             <i class="fa-solid fa-house"></i>
             <span>Room</span>Finder
         </a>
@@ -30,9 +30,7 @@
 
 
 
-                <li class="nav-item nav1 nav2" >
-                    <a class="nav-link " href="${pageContext.request.contextPath}/index.jsp">Home</a>
-                </li>
+                
 
                 <li class="nav-item nav1 nav2">
                     <a class="nav-link " href="${pageContext.request.contextPath}/admin/postproperty.jsp">Post Property</a>
@@ -45,7 +43,7 @@
                     <a class="nav-link " href="${pageContext.request.contextPath}/admin/aboutus.jsp">About Us</a>
                 </li>
             </ul>
-                    <a style="margin-right: 2.5rem" class="nav-link nav-item nav1 " href="<%= request.getContextPath()%>/profileServalet"><i class="fa-solid fa-circle-user"></i><%= ausername %></a>
+                    <a style="margin-right: 2.5rem" class="nav-link nav-item nav1 " href="#"><i class="fa-solid fa-circle-user"></i><%= ausername %></a>
             <a class="nav-link nav-item nav1 " href="<%= request.getContextPath()%>/logoutServalet">Logout</a>
 
         </div>
